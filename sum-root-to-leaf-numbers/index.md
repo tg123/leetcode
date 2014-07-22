@@ -1,6 +1,6 @@
 ---
 layout: solution
-title: ZigZag Conversion
+title: Sum Root to Leaf Numbers
 date: 2014-07-23 00:00:00
 ---
 {% assign leetcode_name = {{page.path | remove: '/index.md'}}  %}
