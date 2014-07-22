@@ -1,0 +1,19 @@
+---
+layout: default
+---
+{% assign leetcode_name = {{page.path | remove: '/index.html'}}  %}
+{% assign leetcode_source = {{leetcode_name | append: '/Solution.java' | prepend: '_root/'}}  %}
+{% assign leetcode_readme = {{leetcode_name | append: '/README.md' | prepend: '_root/'}}  %}
+{% assign leetcode_url = {{leetcode_name | prepend: 'https://oj.leetcode.com/problems/'}}  %}
+
+<h2>{{ page.title }}</h2>
+<p class="meta">{{ page.date | date_to_string }}</p>
+<p><a href="{{leetcode_url}}" target="_blank">{{leetcode_url}}</a></p>
+
+{% include {{leetcode_readme}} %}
+
+<h3> Source code </h3>
+<hr>
+{% highlight java linenos %}
+{% include {{leetcode_source}} %}
+{% endhighlight %}

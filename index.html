@@ -1,0 +1,15 @@
+---
+layout: default
+title: Leetcode
+---
+
+<div id="home">
+  <h1>Blog Posts</h1>
+  <ul class="posts">
+    {% for page in site.pages %}
+    {% if page.layout == 'solution' %}
+      <li><span></span> &raquo; <a href="{{ page.url }}">{{ page.title }}</a></li>
+    {% endif %}
+    {% endfor %}
+  </ul>
+</div>
