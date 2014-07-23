@@ -1,7 +1,7 @@
 ---
 layout: solution
 title: Scramble String
-date: 2014-07-23 00:00:00
+date: 2014-07-23 16:13:00
 ---
 {% assign leetcode_name = {{page.path | remove: '/index.md'}}  %}
 {% assign leetcode_readme = {{leetcode_name | append: '/README.md' | prepend: '_root/' }}  %}
