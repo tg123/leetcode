@@ -6,7 +6,8 @@ title: Leetcode
 <div id="home">
   <h1>Solutions</h1>
   <ul class="posts">
-    {% for page in site.pages %}
+    {% assign pages = site.pages | sort: 'date' %}
+    {% for page in pages reversed %}
     {% if page.layout == 'solution' %}
       <li><span></span> &raquo; <a href="{{ page.url }}">{{ page.title }}</a></li>
     {% endif %}
