@@ -4,14 +4,16 @@ layout: default
 {% assign leetcode_name = {{page.path | remove: '/index.md'}}  %}
 {% assign leetcode_source = {{leetcode_name | append: '/Solution.java' | prepend: '_root/'}}  %}
 {% assign leetcode_url = {{leetcode_name | prepend: 'https://oj.leetcode.com/problems/'}}  %}
+{% assign github_url = {{leetcode_name | prepend: 'https://github.com/tg123/leetcode/blob/gh-pages/' }}  %}
+{% assign github_source_url = {{leetcode_name | prepend: 'https://github.com/tg123/leetcode/blob/gh-pages/' | append: '/Solution.java' }}  %}
 
 <h2>{{ page.title }}</h2>
 <p><a href="{{leetcode_url}}" target="_blank">{{leetcode_url}}</a></p>
-<p class="meta">Last Update {{ page.date }}</p>
+<p class="meta">Last Update {{ page.date }} <b><a href="{{github_url}}">View on Github</a></b></p>
 
 {{ content }}
 
-<h3> Source code </h3>
+<h3> Source code <em><a href="{{github_source_url}}">Read on Github</a></em></h3>
 <hr>
 {% highlight java linenos %}
 {% include {{leetcode_source}} %}
