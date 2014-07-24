@@ -6,7 +6,7 @@ layout: default
   <h1>Solutions</h1>
 
   <ul class="posts">
-    {% assign pages = site.pages | sort: 'date' %}
+    {% assign pages = site.pages %}
     {% for page in pages reversed %}
     {% if page.layout == 'solution' %}
       <li>
