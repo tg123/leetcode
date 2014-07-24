@@ -4,6 +4,9 @@ description: "Leetcode solutions by tgic"
 github_username:  tg123
 markdown: redcarpet
 
+baseurl: ""
+url: "http://leetcode.tgic.me/"
+
 redcarpet:
   extensions: ['highlight', 'autolink']
 
