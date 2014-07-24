@@ -48,6 +48,7 @@ if haystack[i + j] != needle[j]
 ### Where should `i` jump to on earth?
 
 e.g.
+
 ```
 0 1 2 3 4 5 6
 A B A B A C G
@@ -204,6 +205,7 @@ if any new char(`needle[i - 1]`) comes, checking `needle[0 + P[i - 1]] == needle
 
 
 e.g.
+
 ```
 0 1 2 3 4 5
 A B C A B C
@@ -223,6 +225,7 @@ here we can see `m = 0 + P[i - 1]` and `n = i - 1`
 
 
 ### P finding Final version
+
 
 ```
 for i in needle
