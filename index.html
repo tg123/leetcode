@@ -1,16 +1,19 @@
 ---
 layout: default
-title: Leetcode
 ---
+<div class="home">
 
-<div id="home">
   <h1>Solutions</h1>
+
   <ul class="posts">
     {% assign pages = site.pages | sort: 'date' %}
     {% for page in pages reversed %}
     {% if page.layout == 'solution' %}
-      <li><span></span> &raquo; <a href="{{ page.url }}">{{ page.title }}</a></li>
+      <li>
+        <a class="post-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+      </li>
     {% endif %}
     {% endfor %}
   </ul>
+
 </div>

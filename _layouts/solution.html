@@ -7,20 +7,24 @@ layout: default
 {% assign github_url = {{leetcode_name | prepend: 'https://github.com/tg123/leetcode/blob/gh-pages/' }}  %}
 {% assign github_source_url = {{leetcode_name | prepend: 'https://github.com/tg123/leetcode/blob/gh-pages/' | append: '/Solution.java' }}  %}
 
-<h2>{{ page.title }}</h2>
+<div class="post">
+
+<header class="post-header">
+<h1>{{ page.title }}</h1>
 <p><a href="{{leetcode_url}}" target="_blank">{{leetcode_url}}</a></p>
 <p class="meta">Last Update {{ page.date }} <b><a href="{{github_url}}">View on Github</a></b></p>
+</header>
 
+<article class="post-content">
 {{ content }}
+</article>
 
+<div>
 <h3> Source code <em><a href="{{github_source_url}}">Read on Github</a></em></h3>
-<hr>
 {% highlight java linenos %}
 {% include {{leetcode_source}} %}
 {% endhighlight %}
-
-
-<hr>
+</div>
 
 <div id="disqus_thread"></div>
 <script type="text/javascript">
@@ -37,3 +41,5 @@ var disqus_shortname = 'leetcode-tgic'; // required: replace example with your f
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
+
+</div>
