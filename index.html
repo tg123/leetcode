@@ -6,13 +6,11 @@ layout: default
   <h1>Solutions</h1>
 
   <ul class="posts">
-    {% assign pages = site.pages %}
+    {% assign pages = site.pages | where: 'layout', 'solution' | sort: 'date' %}
     {% for page in pages reversed %}
-    {% if page.layout == 'solution' %}
       <li>
         <a class="post-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
       </li>
-    {% endif %}
     {% endfor %}
   </ul>
 
