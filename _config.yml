@@ -1,3 +1,7 @@
 name: Boshi's Leetcode
 markdown: redcarpet
-pygments: true
+
+redcarpet:
+  extensions: ['highlight', 'autolink']
+
+highlighter: pygments
