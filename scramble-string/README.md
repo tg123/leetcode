@@ -38,7 +38,7 @@ scramble(s) = [scramble(0) * scramble(123)] + [scramble(123) * scramble(0)]
              +[scramble(01) * scramble(23)] + [scramble(23) * scramble(01)]
              +[scramble(012) * scramble(3)] + [scramble(3) * scramble(012)]
 
-scramble return a set and * here means cartesian product
+scramble return a two_part_set and * here means cartesian product
 ```
 
 after write down things above, 
@@ -53,13 +53,22 @@ will yield a `scramble string` in form of `0XXX`
 that means we can make a filter to remove all `set` must not take `0` as its first letter
 and `1` as it second and so on...
 
+so we build a methd
+```
+check_has_char(pos, letter, two_part_set)
+    set = pos -> left_set or right_set depends on the two_part_set pivot
+    
+    return set contains letter
 ```
 
+isScramble should be like
+
+```
 all_result_list = scramble(s1) 
 
 foreach letter and pos in s2
     foreach result in all_result_list
-        if result cant have letter at pos
+        if not check_has_char(pos, letter, result)
             remove result from all_result_list
         
     if all_result_list is empty
@@ -81,7 +90,38 @@ s1_left  (gerated `set[0]`)
 s1_right (gerated `set[123]`) 
 ```
 
-if check passed, then isScramble(s1, s2) = True
+if checking passed, then isScramble(s1, s2) = True
 
+## Deal with duplicated elements
+
+above method will fail if there are duplicated elements. because we use a set to store left and right part of string.
+
+```
+scramble(1122) = [1|12] + [12|1]
+                +[1|2]  + [1|2]
+                +[12|2] + [2|12]
+``` 
+
+to make that case work, chage the `set` to `set_with_count`
+
+
+```
+scramble(1122) = [1(2)|1(1)2(1)] + [1(1)2(1)|1(2)]
+                +[1(2)|2(2)]     + [1(2)|2(2)]
+                +[1(2)2(1)|2(1)] + [2(1)|1(2)2(1)]
+``` 
+
+we have to make some change to `check_has_char`
+
+```
+check_has_char(pos, letter, need_count, two_part_set)
+    pos -> left_set or right_set depends on the two_part_set pivot
+    
+    if pos on the left_set
+        return left_set contains letter count >= need_count
+        
+    if pos on the right_set
+        return left_set contains letter count + right_set contains letter count >= need_count
+```
 
 
