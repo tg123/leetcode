@@ -22,13 +22,17 @@ public class Solution {
         int quotient = 0;
         int a = 1;
         
+        int r = divisor;
+        
         while(dividend >= divisor ){
-            int r = divisor * a;
+            
             if(r > dividend){
                 a--;
+                r -= divisor;
             }else{
                 dividend -= r;
                 quotient += a++;
+                r += divisor;
             }
         }
         
