@@ -8,30 +8,62 @@
  * }
  */
 public class Solution {
+    
+    static enum ReturnAddress {
+        PRE, IN, POST, DONE;
+    }
+    
+    static class StackState {
+        ReturnAddress returnAddress = ReturnAddress.PRE;
+        TreeNode param;
+        
+        StackState(TreeNode param){
+            this.param = param;
+        }
+    }
+    
     public ArrayList<Integer> postorderTraversal(TreeNode root) {
-        Deque<Integer> rt = new LinkedList<Integer>();
+        ArrayList<Integer> rt = new ArrayList<Integer>();
 
-        Deque<TreeNode> stack = new LinkedList<TreeNode>();
+        Deque<StackState> stack = new LinkedList<StackState>();
         
         if(root != null)
-            stack.push(root);
+            stack.push(new StackState(root));
         
         while(!stack.isEmpty()){
             
-            TreeNode current = stack.pop();
-            rt.push(current.val);
-
-
-            if(current.left != null)
-                stack.push(current.left);            
+            StackState current = stack.pop();
             
-            if(current.right != null)
-                stack.push(current.right);
-
+            switch(current.returnAddress){
+                case PRE:
+                    current.returnAddress = ReturnAddress.IN;
+                    
+                    if(current.param.left != null){
+                        stack.push(current);
+                        stack.push(new StackState(current.param.left));
+                        continue;
+                    }
+                    
+                case IN:
+                    current.returnAddress = ReturnAddress.POST;
                 
+                    if(current.param.right != null){
+                        stack.push(current);
+                        stack.push(new StackState(current.param.right));
+                        continue;
+                    }
+
+                case POST:
+                    current.returnAddress = ReturnAddress.DONE;
+                    
+                    rt.add(current.param.val);
+                    
+                default:
+                    break;
+            }
         }
         
         
-        return new ArrayList<Integer>(rt);
+        return rt;
     }
 }
