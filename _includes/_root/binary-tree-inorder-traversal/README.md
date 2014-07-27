@@ -6,7 +6,7 @@
 
 It is easy to write a recursive version. 
 
-## Convert to a iterative version
+## Convert to an iterative version
 
 There are a lot of articles about how to do this using a stack, but, I have no enough memory to understand why they are using stack like that. 
 As a result, I am going to write a `function call` simulating verison.
