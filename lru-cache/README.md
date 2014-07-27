@@ -4,6 +4,7 @@ Java do have LRU Cache in JDK,
 we used to call it `LinkedHashMap`
 
 code from JDK 1.6
+
 ```    
     /**
      * Constructs an empty <tt>LinkedHashMap</tt> instance with the
@@ -29,6 +30,7 @@ here the parameter `accessOrder` can be used to refresh newly accessed value
 and
 
 override
+
 ```
     protected boolean removeEldestEntry(Map.Entry<K,V> eldest) {
         return false;
@@ -99,9 +101,5 @@ add E to linked list Entry[hash(E.key)]
 moveToLinkTop(E)
 
 ```
-
-
-
-
 
 
