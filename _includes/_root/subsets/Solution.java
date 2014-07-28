@@ -1,8 +1,6 @@
 public class Solution {
-    public ArrayList<ArrayList<Integer>> subsets(int[] S) {
-        // Note: The Solution object is instantiated only once and is reused by each test case.
-        
-        ArrayList<ArrayList<Integer>> rt = new ArrayList<ArrayList<Integer>>();
+    public List<List<Integer>> subsets(int[] S) {
+        ArrayList<List<Integer>> rt = new ArrayList<List<Integer>>();
         
         if (S.length == 0){
             rt.add(new ArrayList<Integer>());
@@ -32,6 +30,5 @@ public class Solution {
         }
         
         return rt;
-        
     }
 }
