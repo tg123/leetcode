@@ -1,16 +1,11 @@
 public class Solution {
-    public ArrayList<ArrayList<Integer>> generate(int numRows) {
-        // IMPORTANT: Please reset any member data you declared, as
-        // the same Solution instance will be reused for each test case.
+    public List<List<Integer>> generate(int numRows) {
         
-        ArrayList<ArrayList<Integer>> rt = new ArrayList<ArrayList<Integer>>();
+        ArrayList<List<Integer>> rt = new ArrayList<List<Integer>>();
+        
         Integer[] prev = null;
+        
         for(int i = 1 ; i <= numRows; i++){
-            
-            //ArrayList<Integer> row = new ArrayList<Integer>(i);
-            
-            //row.add(0, 1);
-            //row.add(i - 1, 1);
             
             Integer[] row = new Integer[i];
             
@@ -28,5 +23,6 @@ public class Solution {
         
         
         return rt;
+        
     }
 }
