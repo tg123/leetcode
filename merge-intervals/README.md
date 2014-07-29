@@ -42,18 +42,18 @@ stack with sorted intervals
 
 while stack is not empty
 
-  smallest = queue.pop()
-  secondary smallest queue.pop()
+  smallest = stack.pop()
+  secondary smallest = stack.pop()
 
   if can merge (overlap or contain)
-     merged = merge(smallest, secondary smallest queue)
+     merged = merge(smallest, secondary smallest)
      stack.push(merged)
   
   else
   
      put smallest into results
      
-     stack.push(secondary smallest queue)
+     stack.push(secondary smallest)
      
      
 
