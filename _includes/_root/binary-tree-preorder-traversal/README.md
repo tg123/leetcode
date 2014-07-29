@@ -1,4 +1,5 @@
+## Some as [Binary Tree Inorder Traversal](../binary-tree-inorder-traversal)
 
-## TODO 
-  * write down thinking
-
+ * visit node
+ * preorder(node.left)
+ * preorder(node.right)
