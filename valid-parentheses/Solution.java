@@ -1,14 +1,11 @@
 public class Solution {
     
-    
-    public boolean couple(char l, char r){
+    boolean couple(Character l, Character r){
+        if(l == null) return false;
         return (l == '[' && r == ']') || (l == '(' && r == ')') || (l == '{' && r == '}');
     }
     
     public boolean isValid(String s) {
-        // Note: The Solution object is instantiated only once and is reused by each test case.
-        
-        
         if(s == null) return false;
         
         char[] chars = s.toCharArray();
@@ -17,12 +14,9 @@ public class Solution {
         
         LinkedList<Character> stack = new LinkedList<Character>();
         
-        for(char c : chars){
-            Character _peek = stack.peek();
-            
-            char peek = _peek != null ? _peek : ' ';
-            //char c
-            
+        for(char c: chars){
+            Character peek = stack.peek();
+
             if(couple(peek, c)){
                 stack.pop();
             }else{
@@ -31,6 +25,5 @@ public class Solution {
         }
         
         return stack.size() == 0;
-        
     }
 }
