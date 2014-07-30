@@ -2,7 +2,7 @@
 
 If there is some bad things yesterday, we gotta forget it.
 
-This is the some in finding maximum subarray. ^_^
+This is the same in finding maximum subarray. ^_^
 
  * drop pre-subarray if the sum is negative
  * merge current and pre-subarray if the sum of pre-subarray is positive
