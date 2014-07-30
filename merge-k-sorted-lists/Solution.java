@@ -11,43 +11,37 @@
  */
 public class Solution {
     
-    ListNode merge(ListNode l1, ListNode l2){
-        ListNode m = new ListNode(0);
-        ListNode h = m;
+    ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+        ListNode rt = new ListNode(0);
+        ListNode h = rt;
         
-        while(l1 != null && l2 != null){
-            
+        while( l1 != null && l2 != null){
             if(l1.val < l2.val){
-                m.next = l1;
+                rt.next = l1;
                 l1 = l1.next;
-            }else{
-                m.next = l2;
+            }else{ 
+                rt.next = l2;
                 l2 = l2.next;
             }
             
-            m = m.next;
+            rt = rt.next;
         }
+
+        if(l1 != null) rt.next = l1;
+        else rt.next = l2;
         
-        if(l1 == null) m.next = l2;
-        else m.next = l1;
         
         return h.next;
     }
     
-    public ListNode mergeKLists(ArrayList<ListNode> lists) {
-        // Note: The Solution object is instantiated only once and is reused by each test case.
+    public ListNode mergeKLists(List<ListNode> lists) {
         
-        if(lists == null) return null;
+        final int size = lists.size();
         
-        LinkedList<ListNode> s = new LinkedList<ListNode>(lists);
+        if(size == 0) return null;
+        if(size == 1) return lists.get(0);
+        if(size == 2) return mergeTwoLists(lists.get(0), lists.get(1));
         
-        while(s.size() > 1){
-            s.push(merge(s.pop(), s.pop()));
-        }
-        
-        if(s.size() == 1) return s.get(0);
-        
-        return null;
-        
+        return mergeTwoLists(mergeKLists(lists.subList(0, size / 2)), mergeKLists(lists.subList(size / 2, size)));
     }
 }
