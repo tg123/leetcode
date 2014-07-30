@@ -8,45 +8,38 @@
  * }
  */
 public class Solution {
-    public ArrayList<Interval> insert(ArrayList<Interval> intervals, Interval newInterval) {
-        // Note: The Solution object is instantiated only once and is reused by each test case.
-        
-        //intervals.add(newInterval);
-        //Collections.sort(intervals, new Comparator<Interval>(){
-        //    public int compare(Interval o1, o2){ return o1.start - o2.start ; }
-        //});
-        
-        LinkedList<Interval> _i = new LinkedList<Interval>(intervals);
-        
-        boolean insert = false;
-        for(int i = 0 ; i<_i.size() ; i++){
-            if(newInterval.start <= _i.get(i).start) {
-                _i.add(i, newInterval);
-                insert = true;
+    public List<Interval> insert(List<Interval> intervals, Interval newInterval) {
+
+        int pos = intervals.size();
+
+        for(int i = 0; i < intervals.size(); i++){
+            if(newInterval.start <= intervals.get(i).start){
+                pos = i;
                 break;
             }
         }
-        if(!insert) _i.add(newInterval);
         
-        ArrayList<Interval> rt = new ArrayList<Interval>();
-        
-        while(_i.size() > 1){
-            Interval i1 = _i.pop();
-            Interval i2 = _i.pop();
-            
-            if(i1.end >= i2.start){
-                _i.push(new Interval(i1.start, Math.max(i1.end, i2.end)));
-            }else{
-                rt.add(i1);
-                _i.push(i2);
-            }
-         
+        intervals.add(pos, newInterval);
 
+        
+        ArrayList<Interval> rt = new  ArrayList<Interval>();
+
+        LinkedList<Interval> s = new LinkedList<Interval>(intervals);
+
+        while (s.size() > 1) {
+            Interval i1 = s.pop();
+            Interval i2 = s.pop();
+
+            if (i1.end >= i2.start) {
+                s.push(new Interval(i1.start, Math.max(i1.end, i2.end)));
+            } else {
+                s.push(i2);
+                rt.add(i1);
+            }
         }
         
-        rt.addAll(_i);
+        rt.addAll(s);
         
         return rt;
-        
     }
 }
