@@ -1,34 +1,44 @@
 public class Solution {
     public String simplifyPath(String path) {
-        // Note: The Solution object is instantiated only once and is reused by each test case.
         
-        
-        if(path == null) return null;
-
         String[] names = path.split("/");
-        LinkedList<String> stack = new LinkedList<String>(Arrays.asList(names));
         
-        String r = "";
         int eat = 0;
-        while(stack.size() > 0){
-            String n = stack.pollLast();
-            if("..".equals(n)) {
+        
+        LinkedList<String> stack = new LinkedList<String>();
+        
+        for(int i = names.length - 1; i >= 0; i--){
+            
+            String token = names[i];
+            
+            if("..".equals(token)){
                 eat++;
-            }
-            else if(".".equals(n)) { 
-                //if(eat>0) eat--; 
-            }
-            else if(!"".equals(n)){
-                if(eat > 0) eat--;
-                else{
-                    r = "/" + n + r;
+            }else if(".".equals(token)){
+                // do nothing
+            }else if("".equals(token)){
+                // do nothing
+            }else {
+                
+                // dir name
+                if(eat > 0){
+                    eat--;
+                }else{
+                    stack.push(token);
                 }
             }
         }
         
-        if("".equals(r)) r = "/";
+        StringBuilder s = new StringBuilder();
         
-        return r;
+        s.append("/");
         
+        while(stack.size() > 1){
+            s.append(stack.pop());
+            s.append("/");
+        }
+        
+        if(!stack.isEmpty()) s.append(stack.pop());
+        
+        return s.toString();
     }
 }

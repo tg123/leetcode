@@ -1,7 +1,7 @@
 ---
 layout: solution
 title: Maximum Subarray
-date: 2014-07-30 01:03:08 +0800
+date: 2014-07-30 19:15:57 +0800
 eaten: true
 ---
 {% assign leetcode_name = {{page.path | remove: '/index.md'}}  %}

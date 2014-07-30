@@ -1,4 +1,3 @@
+## Easier than [Pascal's Triangle I](../pascals-triangle)
 
-## TODO 
-  * write down thinking
-
+Output `row[i]` only
