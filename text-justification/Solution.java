@@ -6,9 +6,7 @@ public class Solution {
         return new String(s);
     }
     
-    public ArrayList<String> fullJustify(String[] words, int L) {
-        // Note: The Solution object is instantiated only once and is reused by each test case.
-        
+    public List<String> fullJustify(String[] words, int L) {
         
         ArrayList<String> text = new ArrayList<String>();
         
@@ -61,5 +59,6 @@ public class Solution {
         }
         
         return text;
+        
     }
 }
