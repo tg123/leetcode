@@ -9,10 +9,9 @@ public class Solution {
         return rt;
     }
     
-    public ArrayList<ArrayList<Integer>> permute(int[] num) {
-        // Note: The Solution object is instantiated only once and is reused by each test case.
+    public List<List<Integer>> permute(int[] num) {
         
-        ArrayList<ArrayList<Integer>> rt = new ArrayList<ArrayList<Integer>>();
+        ArrayList<List<Integer>> rt = new ArrayList<List<Integer>>();
         
         if(num.length == 0){
             // do nothing
@@ -21,7 +20,7 @@ public class Solution {
         }else{
             
             for(int i = 0; i < num.length; i++){
-                for(ArrayList<Integer> l : permute(resetof(num, i))){
+                for(List<Integer> l : permute(resetof(num, i))){
                     l.add(num[i]);
                     rt.add(l);
                 };
@@ -30,6 +29,7 @@ public class Solution {
         }
         
         return rt;
+
         
     }
 }
