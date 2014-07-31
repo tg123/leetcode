@@ -5,39 +5,23 @@ layout: default
 
   <h1>Solutions <em>Last update on {{site.time}}</em></h1>
 
-  {% assign pages = site.pages %}
-
   <ul class="posts">
-    {% for page in pages %}
-    {% if page.layout == 'solution' %}
-    {% if page.eaten == true %}
+    {% assign pages = site.pages | where: 'layout', 'solution' | where: 'eaten', true | sort: 'date' %}
+    {% for page in pages reversed %}
       <li>
         <a class="post-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
-        {% if page.eaten == true %}
         <em>[Code and Explanation]</em>
-        {% else %}
-        <em>[Code only]</em>
-        {% endif %}
       </li>
-    {% endif %}
-    {% endif %}
     {% endfor %}
   </ul>
 
   <ul class="posts">
-    {% for page in pages %}
-    {% if page.layout == 'solution' %}
-    {% if page.eaten != true %}
+    {% assign pages = site.pages | where: 'layout', 'solution' | where: 'eaten', nil | sort: 'date' %}
+    {% for page in pages reversed %}
       <li>
         <a class="post-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
-        {% if page.eaten == true %}
-        <em>[Code and Explanation]</em>
-        {% else %}
         <em>[Code only]</em>
-        {% endif %}
       </li>
-    {% endif %}
-    {% endif %}
     {% endfor %}
   </ul>
 
