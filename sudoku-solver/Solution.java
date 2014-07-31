@@ -33,8 +33,15 @@ public class Solution {
 
                     for(char c : val){
                         board[x][y] = c;
-                        if(isValidSudoku(board) && _solveSudoku(board))
-                            return true;
+                        
+                        if(isValidSudoku(board)){
+                            // try next '.'
+                            if(_solveSudoku(board)){
+                                return true;
+                            }
+                            
+                            // try another number
+                        }
 
                         board[x][y] = '.';
                     }
