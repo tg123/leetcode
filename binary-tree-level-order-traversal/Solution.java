@@ -8,11 +8,9 @@
  * }
  */
 public class Solution {
-    public ArrayList<ArrayList<Integer>> levelOrder(TreeNode root) {
-        // IMPORTANT: Please reset any member data you declared, as
-        // the same Solution instance will be reused for each test case.
+    public List<List<Integer>> levelOrder(TreeNode root) {
         
-        ArrayList<ArrayList<Integer>> rt = new  ArrayList<ArrayList<Integer>>();
+        ArrayList<List<Integer>> rt = new  ArrayList<List<Integer>>();
         
         if(root == null) return rt;
         
@@ -20,27 +18,28 @@ public class Solution {
         
         Deque<TreeNode> queue = new LinkedList<TreeNode>();
         
-        queue.addLast(root);
-        queue.addLast(END);
+        queue.add(root);
+        queue.add(END);
         
-        while(queue.getFirst() != END){
-            ArrayList<Integer> cur = new ArrayList<Integer>();
+        ArrayList<Integer> level = new ArrayList<Integer>();
+        
+        while(!queue.isEmpty()){
             
-            TreeNode node = queue.removeFirst();
+            TreeNode node = queue.poll();
             
-            while(node != END){
+            if(node == END){
+                rt.add(new ArrayList<Integer>(level)); // copy
+                level.clear();
                 
-                cur.add(node.val);
+                if(!queue.isEmpty()) queue.add(END);
                 
-                if(node.left != null) queue.addLast(node.left);
+            }else{
+                
+                level.add(node.val);
+                                
+                if(node.left != null)  queue.addLast(node.left);
                 if(node.right != null) queue.addLast(node.right);
-                
-                node = queue.removeFirst();
             }
-            
-            
-            rt.add(cur);
-            queue.addLast(END);
         }
         
         return rt;
