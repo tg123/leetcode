@@ -1,5 +1,4 @@
 public class Solution {
-    
     boolean[][] chessboard;
     
     int target;
@@ -55,9 +54,7 @@ public class Solution {
         
     }
     
-    public ArrayList<String[]> solveNQueens(int n) {
-        // Note: The Solution object is instantiated only once and is reused by each test case.
-        
+    public List<String[]> solveNQueens(int n) {
         chessboard = new boolean[n][n];
         target = n - 1;
         
