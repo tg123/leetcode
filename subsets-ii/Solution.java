@@ -1,7 +1,7 @@
 public class Solution {
-    public ArrayList<ArrayList<Integer>> subsetsWithDup(int[] num) {
-        // Note: The Solution object is instantiated only once and is reused by each test case.
-        ArrayList<ArrayList<Integer>> rt = new ArrayList<ArrayList<Integer>>();
+    public List<List<Integer>> subsetsWithDup(int[] num) {
+        
+        ArrayList<List<Integer>> rt = new ArrayList<List<Integer>>();
         
         if (num.length == 0){
             rt.add(new ArrayList<Integer>());
@@ -28,7 +28,7 @@ public class Solution {
             }
             
             next_lv:
-            for(ArrayList<Integer> _level : rt){
+            for(List<Integer> _level : rt){
                 
                 if(_level.size() == level.size()){
                     for(int li = 0; li < _level.size(); li++){
@@ -44,5 +44,6 @@ public class Solution {
         }
         
         return rt;
+        
     }
 }
