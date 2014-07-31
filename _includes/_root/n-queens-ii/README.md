@@ -1,4 +1,3 @@
+## Same as [N-Queens I](../n-queens)
 
-## TODO 
-  * write down thinking
-
+`count = count + 1` when a solution is found. 

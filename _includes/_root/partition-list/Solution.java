@@ -15,7 +15,6 @@ public class Solution {
         if(head.next == null) return head;
         
         final ListNode less = new ListNode(0);
-        final ListNode equal = new ListNode(0);
         final ListNode greater = new ListNode(0);
         
         ListNode _less    = less;

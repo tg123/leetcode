@@ -5,9 +5,8 @@ public class Solution {
         int index2;
     }
     
-    public ArrayList<ArrayList<Integer>> fourSum(int[] num, int target) {
-        
-        ArrayList<ArrayList<Integer>> found = new ArrayList<ArrayList<Integer>>();
+    public List<List<Integer>> fourSum(int[] num, int target) {
+        ArrayList<List<Integer>> found = new ArrayList<List<Integer>>();
         
         if(num.length < 4) return found;
         
@@ -58,7 +57,7 @@ public class Solution {
                     
                     String uid = Arrays.toString(sol);
                     if(!block.contains(uid)){
-                        found.add(new ArrayList<Integer>(Arrays.asList(sol)));
+                        found.add(Arrays.asList(sol));
                         
                         block.add(uid);
                     }
@@ -70,6 +69,5 @@ public class Solution {
         
         
         return found;
-        
     }
 }
