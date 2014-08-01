@@ -1,4 +1,3 @@
+## Same as [Clone Graph](../clone-graph)
 
-## TODO 
-  * write down thinking
-
+even same code structure...

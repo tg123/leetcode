@@ -1,7 +1,7 @@
 ---
 layout: solution
 title: Maximum Depth of Binary Tree
-date: 2014-07-31 22:11:15 +0800
+date: 2014-08-01 01:25:55 +0800
 eaten: true
 ---
 {% assign leetcode_name = {{page.path | remove: '/index.md'}}  %}

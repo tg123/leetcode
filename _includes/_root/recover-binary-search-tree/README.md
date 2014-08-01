@@ -1,4 +1,5 @@
+## Which two are swapped by mistake
 
-## TODO 
-  * write down thinking
+a BST should yield an array of number in non-descending order.
 
+Inorder travel the tree will find out which two are bad.

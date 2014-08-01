@@ -1,6 +1,5 @@
 public class Solution {
     
-    
     ArrayList<String> collect;
     
     String[] stack;
@@ -12,12 +11,7 @@ public class Solution {
             if(p >= s.length()){
                 String ip = "" + stack[0] + "." + stack[1] + "." + stack[2] + "." + stack[3];
                 
-                String _ip = "" + stack[0] + stack[1] + stack[2] + stack[3]; //shame
-                
-                if(s.equals(_ip)){
-                    collect.add(ip);
-                }
-                    
+                collect.add(ip);
             }
             
             return;
@@ -28,18 +22,19 @@ public class Solution {
             if( p + i > s.length())
                 return;
             
-            String test = s.substring(p, p + i);
+            String number = s.substring(p, p + i);
             
-            if(Integer.valueOf(test) <= 255){
-                stack[pstack] = "" + Integer.valueOf(test);
+            if(i > 1 && s.charAt(p) == '0') continue;
+            
+            if(Integer.parseInt(number) <= 255){
+                stack[pstack] = number;
                 findnum(s, p + i, pstack + 1);
             } 
             
         }
     }
     
-    public ArrayList<String> restoreIpAddresses(String s) {
-        // Note: The Solution object is instantiated only once and is reused by each test case.
+    public List<String> restoreIpAddresses(String s) {
         
         collect = new ArrayList<String>();
         stack = new String[4];
@@ -47,6 +42,5 @@ public class Solution {
         findnum(s, 0 , 0);
         
         return collect;
-        
     }
 }

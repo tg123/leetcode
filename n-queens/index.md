@@ -1,7 +1,7 @@
 ---
 layout: solution
 title: N-Queens
-date: 2014-07-31 18:53:20 +0800
+date: 2014-08-01 01:00:44 +0800
 eaten: true
 ---
 {% assign leetcode_name = {{page.path | remove: '/index.md'}}  %}
