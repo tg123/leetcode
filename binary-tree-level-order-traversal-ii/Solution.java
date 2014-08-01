@@ -8,43 +8,39 @@
  * }
  */
 public class Solution {
-    
-    static final TreeNode END = new TreeNode(0);
-    
-    public ArrayList<ArrayList<Integer>> levelOrderBottom(TreeNode root) {
-        // Note: The Solution object is instantiated only once and is reused by each test case.
+    public List<List<Integer>> levelOrderBottom(TreeNode root) {
+        LinkedList<List<Integer>> rt = new  LinkedList<List<Integer>>();
         
-        if(root == null) return new ArrayList<ArrayList<Integer>>();
+        if(root == null) return rt;
         
-        Deque<ArrayList<Integer>> stack = new LinkedList<ArrayList<Integer>>();
+        final TreeNode END = new TreeNode(0);
         
         Deque<TreeNode> queue = new LinkedList<TreeNode>();
         
         queue.add(root);
         queue.add(END);
         
-        while(queue.peek() != END){
+        ArrayList<Integer> level = new ArrayList<Integer>();
+        
+        while(!queue.isEmpty()){
             
-            TreeNode current = queue.poll();
+            TreeNode node = queue.poll();
             
-            ArrayList<Integer> level = new ArrayList<Integer>();
-            
-            while(current != END){
-                level.add(current.val);
+            if(node == END){
+                rt.push(new ArrayList<Integer>(level)); // copy
+                level.clear();
                 
-                if(current.left  != null) queue.add(current.left);
-                if(current.right != null) queue.add(current.right);
+                if(!queue.isEmpty()) queue.add(END);
                 
-                current = queue.poll();
+            }else{
+                
+                level.add(node.val);
+                                
+                if(node.left != null)  queue.addLast(node.left);
+                if(node.right != null) queue.addLast(node.right);
             }
-            
-            queue.add(END);
-            
-            stack.push(level);
-            
         }
         
-        return new ArrayList<ArrayList<Integer>>(stack);
-        
+        return rt;
     }
 }
