@@ -3,6 +3,18 @@ public class Solution {
     static class TwoSum {
         int index1;
         int index2;
+        
+        boolean overlap(TwoSum other){
+            if(this == other) return true;
+            
+            if(index1 == other.index1) return true;
+            if(index2 == other.index1) return true;
+            
+            if(index1 == other.index2) return true;
+            if(index2 == other.index2) return true;
+            
+            return false;
+        }
     }
     
     public List<List<Integer>> fourSum(int[] num, int target) {
@@ -10,12 +22,13 @@ public class Solution {
         
         if(num.length < 4) return found;
         
-        Arrays.sort(num);
-        
         HashMap<Integer, ArrayList<TwoSum>> cache = new HashMap<Integer, ArrayList<TwoSum>>();
+        
+        Arrays.sort(num);
         
         for(int i = 0; i < num.length; i++){
             for(int j = i + 1; j < num.length; j++){
+                
                 int s = num[i] + num[j];
                 TwoSum t = new TwoSum();
                 
@@ -44,16 +57,10 @@ public class Solution {
                 for(TwoSum sa : lsa)
                 for(TwoSum sb : lsb){
                     
-                    if(sa == sb) continue;
-
-                    Integer[] sol = new Integer[]{sa.index1, sa.index2, sb.index1, sb.index2};
+                    if(sa.overlap(sb)) continue;
+                    
+                    Integer[] sol = new Integer[]{num[sa.index1], num[sa.index2], num[sb.index1], num[sb.index2]};
                     Arrays.sort(sol);
-                    
-                    if(sol[0] == sol[1]) continue;
-                    if(sol[1] == sol[2]) continue;
-                    if(sol[2] == sol[3]) continue;
-                    
-                    sol = new Integer[]{num[sol[0]], num[sol[1]], num[sol[2]], num[sol[3]]};
                     
                     String uid = Arrays.toString(sol);
                     if(!block.contains(uid)){
@@ -64,6 +71,9 @@ public class Solution {
                     
                     
                 }
+                
+                cache.put(a, null);
+                cache.put(b, null);
             }
         }
         
