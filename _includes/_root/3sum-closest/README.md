@@ -1,4 +1,3 @@
+## Variant of [3Sum](../3sum)
 
-## TODO 
-  * write down thinking
-
+Just update the closest number each loop.

@@ -9,49 +9,60 @@
  */
 public class Solution {
     
-    int[] stack;
-    int sum = 0;
-    
-    static final int SIZE = 10;
-    
-    void findleaf(TreeNode root, int pstack){
+    static class TreeNodeWithParent {
+        TreeNode node;
+        int parentval;
         
-        if(root == null)
-            return;
-        
-        if(root.left == null && root.right == null){
+        TreeNodeWithParent(TreeNode node, int parentval){
+            this.node = node;
+            this.parentval = parentval;
+        }
+    }
 
-            final int size = pstack;
+    public int sumNumbers(TreeNode root) {
+        
+        if(root == null) return 0;
+        
+        final TreeNodeWithParent END = new TreeNodeWithParent(null ,0);
+        
+        LinkedList<TreeNodeWithParent> queue = new LinkedList<TreeNodeWithParent>();
+
+        int sum = 0;
+        
+        queue.add(new TreeNodeWithParent(root, 0));
+        queue.add(END);
+        
+        while(!queue.isEmpty()){
             
-            sum += root.val;
+            TreeNodeWithParent c = queue.poll();
             
-            for(int i = 0; i < size; i++){
-                sum += stack[i] * Math.pow(10, size - i);
+            if(c == END){
+                
+                if(!queue.isEmpty()){
+                    queue.add(END);
+                } 
+                
+            } else {
+                
+                int p = c.node.val + c.parentval * 10;
+                
+                if(c.node.left  == null && c.node.right == null){
+                    sum += p; 
+                    
+                }else{
+                    
+                    if(c.node.left  != null) 
+                        queue.add(new TreeNodeWithParent(c.node.left, p));
+                        
+                    if(c.node.right != null) 
+                        queue.add(new TreeNodeWithParent(c.node.right, p));
+                    
+                }
+                
             }
             
-            
-        }else{
-            
-            if(pstack >= stack.length)
-                stack = Arrays.copyOf(stack, stack.length + SIZE);
-                
-            stack[pstack] = root.val;
-            
-            findleaf(root.left, pstack + 1);
-            findleaf(root.right, pstack + 1);
-            
         }
-        
-    }
-    
-    public int sumNumbers(TreeNode root) {
-        // IMPORTANT: Please reset any member data you declared, as
-        // the same Solution instance will be reused for each test case.
-        
-        stack = new int[SIZE];
-        sum = 0;
-        
-        findleaf(root, 0);
+
         
         return sum;
     }

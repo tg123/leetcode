@@ -1,4 +1,3 @@
+## Decimal and Linked list version of [Add Binary](../add-binary)
 
-## TODO 
-  * write down thinking
-
+Code may look like the same, linked list is just another kind of array. 

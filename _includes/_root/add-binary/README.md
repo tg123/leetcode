@@ -1,4 +1,4 @@
+## Advanced [Plus One](../plus-one)
 
-## TODO 
-  * write down thinking
-
+ * Plus many Ones this time
+ * binary vs decimal (carry is `digit[i] / 2`)
