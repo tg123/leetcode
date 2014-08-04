@@ -9,61 +9,19 @@
  */
 public class Solution {
     
-    static class TreeNodeWithParent {
-        TreeNode node;
-        int parentval;
-        
-        TreeNodeWithParent(TreeNode node, int parentval){
-            this.node = node;
-            this.parentval = parentval;
-        }
-    }
-
-    public int sumNumbers(TreeNode root) {
+    int sumNumbers(TreeNode root, int parentval){
         
         if(root == null) return 0;
         
-        final TreeNodeWithParent END = new TreeNodeWithParent(null ,0);
+        int p = parentval * 10 + root.val;
         
-        LinkedList<TreeNodeWithParent> queue = new LinkedList<TreeNodeWithParent>();
-
-        int sum = 0;
+        if(root.left == null && root.right == null) return p;
         
-        queue.add(new TreeNodeWithParent(root, 0));
-        queue.add(END);
+        return sumNumbers(root.left, p) + sumNumbers(root.right, p);
         
-        while(!queue.isEmpty()){
-            
-            TreeNodeWithParent c = queue.poll();
-            
-            if(c == END){
-                
-                if(!queue.isEmpty()){
-                    queue.add(END);
-                } 
-                
-            } else {
-                
-                int p = c.node.val + c.parentval * 10;
-                
-                if(c.node.left  == null && c.node.right == null){
-                    sum += p; 
-                    
-                }else{
-                    
-                    if(c.node.left  != null) 
-                        queue.add(new TreeNodeWithParent(c.node.left, p));
-                        
-                    if(c.node.right != null) 
-                        queue.add(new TreeNodeWithParent(c.node.right, p));
-                    
-                }
-                
-            }
-            
-        }
-
-        
-        return sum;
+    }
+    
+    public int sumNumbers(TreeNode root) {
+        return sumNumbers(root, 0);
     }
 }
