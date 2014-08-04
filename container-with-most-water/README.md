@@ -50,7 +50,7 @@ Attempting to compare the `height`s smaller than `MIN(height[i], height[j])` are
 
 #### Redundant enumeration
 
-After `i` and `j` meet each other, the rest of enumeration are redundant. so impoved version should be like
+After `i` and `j` meet each other, the rest of enumeration are redundant. so improved version should be like
 
 
 ```
