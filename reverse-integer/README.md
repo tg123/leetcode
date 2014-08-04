@@ -1,4 +1,5 @@
+## Reverse and join
 
-## TODO 
-  * write down thinking
-
+ * convert number into an array of number
+ * reverse
+ * create an integer from the reversed array
