@@ -1,4 +1,3 @@
+## Preorder traversal
 
-## TODO 
-  * write down thinking
-
+Create a linked list from the nodes visited by preorder travelling.

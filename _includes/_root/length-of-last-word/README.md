@@ -1,4 +1,4 @@
+## Split and count
 
-## TODO 
-  * write down thinking
-
+ * split by `' '`
+ * count the length of the last one
