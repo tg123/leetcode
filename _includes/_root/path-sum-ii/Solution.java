@@ -9,57 +9,36 @@
  */
 public class Solution {
     
-    static final int STACK_SIZE = 10;
-    
-    int sum;
-    
-    int[] stack;
-
-    ArrayList<ArrayList<Integer>> collect;
-    
-    void findsum(TreeNode root, int current, int ps){
-        
-        if(root == null) return;
-        
-        if(current + root.val == sum && root.left == null && root.right == null){
-            
-            ArrayList<Integer> rt = new ArrayList<Integer>();
-            
-            for(int i = 0; i < ps; i++){
-                rt.add(stack[i]);
-            }
-            
-            rt.add(root.val);
-            
-            collect.add(rt);
-            
-        }else{
-            
-            if(ps >= stack.length)
-                stack = Arrays.copyOf(stack, stack.length + STACK_SIZE);
-            
-            stack[ps] = root.val;
-            
-            findsum(root.left, current + root.val, ps + 1);
-            findsum(root.right, current + root.val, ps + 1);
-            
+    void addIfNotEmpty(List<List<Integer>> rt, List<List<Integer>> l){
+        if(!l.isEmpty()){
+            rt.addAll(l);
         }
-        
-        
-        
     }
     
+    List<List<Integer>> pathSum(TreeNode root, int sum, List<Integer> parents) {
+        List<List<Integer>> rt = new ArrayList<List<Integer>>();
+        
+        if(root == null) return rt;
+        
+        ArrayList<Integer> p = new ArrayList<Integer>(parents);
+        p.add(root.val);
+        
+        if(root.left == null & root.right == null){
+            if(root.val == sum){
+                rt.add(p);
+            }
+            
+            return rt;
+        }
+        
+        addIfNotEmpty(rt, pathSum(root.left,  sum - root.val, p));
+        addIfNotEmpty(rt, pathSum(root.right, sum - root.val, p));
+
+        return rt;
+    }
     
-    public ArrayList<ArrayList<Integer>> pathSum(TreeNode root, int sum) {
-        // Note: The Solution object is instantiated only once and is reused by each test case.
+    public List<List<Integer>> pathSum(TreeNode root, int sum) {
         
-        this.sum = sum;
-        
-        stack = new int[STACK_SIZE];
-        collect = new ArrayList<ArrayList<Integer>>();
-        
-        findsum(root, 0, 0);
-        
-        return collect;
+        return pathSum(root, sum, new ArrayList<Integer>());
     }
 }
