@@ -9,65 +9,67 @@
  */
 public class Solution {
     
-    static final Object EMPTY = new Object();
+    static final TreeNode EMPTY = new TreeNode(0);
     
-    TreeNode _root;
-    
-    Deque stack;
-    
-    boolean lefthalf = true;
-    
-    boolean sym = true;
-    
-    void inorder(TreeNode root, TreeNode bro){
+    TreeNode nullToEmpty(TreeNode node){
+        if(node == null) return EMPTY;
         
-        if(root == null){
+        return node;
+    }
+    
+    
+    public boolean isSymmetric(TreeNode root) {
+        
+        if(root == null) return true;
+        
+        LinkedList<TreeNode> queue = new LinkedList<TreeNode>();
+        final TreeNode END = new TreeNode(0);
+        
+        LinkedList<TreeNode> level = new LinkedList<TreeNode>();
+        
+        level.add(nullToEmpty(root.left));
+        level.add(nullToEmpty(root.right));
+        
+        queue.add(END);
+        queue.add(nullToEmpty(root.left));
+        queue.add(nullToEmpty(root.right));
+
+        while(!queue.isEmpty()){
             
-            if(bro != null){
-                if(lefthalf){ // left half
+            TreeNode node = queue.poll();
+            
+            if(node == END){
                 
-                    stack.push(EMPTY);
+                // check
+                while(!level.isEmpty()){
+                    TreeNode left  = level.pollFirst();
+                    TreeNode right = level.pollLast();
                     
-                }else{ // right half
+                    if(left == right) continue;
+                    
+                    if(left == EMPTY && right != EMPTY) return false; 
+                    if(left != EMPTY && right == EMPTY) return false;
+                    
+                    if(left.val != right.val) return false;
+                    
+                }
                 
-                    if(stack.isEmpty() || stack.pop() != EMPTY) sym = false;
+                if(!queue.isEmpty()) queue.add(END);
+                
+            }else{
+                
+                level.add(node);
+                
+                if(node != EMPTY){
+                    queue.add(nullToEmpty(node.left));
+                    queue.add(nullToEmpty(node.right));
                 }
             }
             
             
-            return;
-            
         }
         
-        inorder(root.left, root.right);
         
-        //visit
-        if(root == _root){
-            lefthalf = false;
-            
-        }else if(lefthalf){ // left half
-        
-            stack.push(root.val);
-            
-        }else{ // right half
-            
-            if(stack.isEmpty() || stack.pop() != root.val) sym = false;
-        }
-        
-        inorder(root.right, root.left);
-        
-    }
-    
-    public boolean isSymmetric(TreeNode root) {
-        // Note: The Solution object is instantiated only once and is reused by each test case.
-        
-        _root = root;
-        stack = new LinkedList();
-        lefthalf = true;
-        sym = true;
-        
-        inorder(root, null);
-        
-        return sym && stack.isEmpty();
+        return true;
     }
 }
