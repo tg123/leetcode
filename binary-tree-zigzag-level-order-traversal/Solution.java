@@ -8,16 +8,13 @@
  * }
  */
 public class Solution {
-    
-    static final TreeNode END = new TreeNode(0);
-    
-    public ArrayList<ArrayList<Integer>> zigzagLevelOrder(TreeNode root) {
+    public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
         
-        if(root == null) return new ArrayList<ArrayList<Integer>>();
+        ArrayList<List<Integer>> rt = new ArrayList<List<Integer>>();
         
-        
-        ArrayList<ArrayList<Integer>> rt = new ArrayList<ArrayList<Integer>>();
-        
+        if(root == null) return rt;
+
+        final TreeNode END = new TreeNode(0);
         
         Deque<TreeNode> queue = new LinkedList<TreeNode>();
         
@@ -26,13 +23,21 @@ public class Solution {
         
         boolean direction = true; // true for left -> right , false for right -> left
         
-        while(queue.peek() != END){
-            
+        Deque<Integer> level = new LinkedList<Integer>();
+        
+        while(!queue.isEmpty()){
             TreeNode current = queue.poll();
             
-            Deque<Integer> level = new LinkedList<Integer>();
-            
-            while(current != END){
+            if(current == END){
+                
+                direction = !direction;
+                rt.add(new ArrayList<Integer>(level)); // copy
+                
+                level.clear();
+                
+                if(!queue.isEmpty()) queue.add(END);
+                
+            }else{
                 
                 if(direction){ // true for left -> right , false for right -> left
                     level.addLast(current.val);
@@ -44,14 +49,7 @@ public class Solution {
                 if(current.left  != null) queue.add(current.left);
                 if(current.right != null) queue.add(current.right);
                 
-                current = queue.poll();
             }
-            
-            queue.add(END);
-            
-            direction = !direction;
-            
-            rt.add(new ArrayList<Integer>(level));
         }
         
         return rt;
