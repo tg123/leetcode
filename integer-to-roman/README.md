@@ -1,4 +1,4 @@
+## Opposite to [Roman to Integer](../roman-to-integer)
 
-## TODO 
-  * write down thinking
+This time, rollback the buffer instead of the number.
 
