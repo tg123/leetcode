@@ -4,13 +4,12 @@ public class Solution {
     Integer[] stack;
     int target;
     
-    ArrayList<ArrayList<Integer>> found;
+    ArrayList<List<Integer>> found;
     
     
     void search(int p){
         if(p == target){
-            
-            found.add(new ArrayList(Arrays.asList(stack)));
+            found.add(new ArrayList<Integer>(Arrays.asList(stack)));
             return;
         }
         
@@ -22,7 +21,7 @@ public class Solution {
         }
     }
     
-    public ArrayList<ArrayList<Integer>> combine(int n, int k) {
+    public List<List<Integer>> combine(int n, int k) {
         
         target = k;
         
@@ -31,11 +30,10 @@ public class Solution {
         
         stack = new Integer[k];
         
-        found = new ArrayList<ArrayList<Integer>>();
+        found = new ArrayList<List<Integer>>();
         
         search(0);
         
         return found;
-        
     }
 }
