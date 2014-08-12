@@ -9,7 +9,6 @@
  */
 public class Solution {
     
-
     ArrayList<TreeNode> generateTrees(int[] array){
         if (array.length == 0) return new ArrayList<TreeNode>(Collections.<TreeNode>singletonList(null));
         
@@ -32,10 +31,8 @@ public class Solution {
         return found;
     }
     
-    
-    public ArrayList<TreeNode> generateTrees(int n) {
-        // Note: The Solution object is instantiated only once and is reused by each test case.
-        
+    public List<TreeNode> generateTrees(int n) {
+                
         int[] array = new int[n];
         
         for(int i = 0; i < n ; i++) array[i] = i + 1;

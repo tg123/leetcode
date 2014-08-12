@@ -1,12 +1,11 @@
 public class Solution {
-    
     int target;
     
     int[] candidates;
     
     int[] stack;
     
-    ArrayList<ArrayList<Integer>> rt;
+    ArrayList<List<Integer>> rt;
     
     HashSet<String> block;
     
@@ -42,11 +41,9 @@ public class Solution {
             stack[sp] = 0;
         }
         
-    }
+    }    
     
-    public ArrayList<ArrayList<Integer>> combinationSum2(int[] num, int target) {
-        // Note: The Solution object is instantiated only once and is reused by each test case.
-        
+    public List<List<Integer>> combinationSum2(int[] num, int target) {
         Arrays.sort(num);
         
         candidates = num;
@@ -54,7 +51,7 @@ public class Solution {
         
         stack = new int[candidates.length];
         
-        rt = new ArrayList<ArrayList<Integer>>();
+        rt = new ArrayList<List<Integer>>();
         
         block = new HashSet<String>();
         
