@@ -6,20 +6,23 @@ public class Solution {
         
         HashSet<String> temp = new HashSet<String>();
         
-        for(int i = 1; i < n ; i++){
+        for(String s : generateParenthesis(n - 1)){
+            temp.add("(" + s + ")");
+            temp.add("()" + s);
+            temp.add(s + "()");
+        }
+        
+        for(int i = 2; i < n - 1 ; i++){
             for(String s : generateParenthesis(n - i)){
-                if(i == 1) temp.add("(" + s + ")");
-                
                 for(String ss : generateParenthesis(i)){
-                              
+
                     temp.add(ss + s);
                     temp.add(s + ss);
                 }
-      
+
             }
         }
         
         return new ArrayList<String>(temp);
-        
     }
 }
