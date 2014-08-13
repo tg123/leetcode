@@ -1,4 +1,3 @@
+## Improved version of [Combination Sum](../combination-sum)
 
-## TODO 
-  * write down thinking
-
+This time, add a set to block duplicates.

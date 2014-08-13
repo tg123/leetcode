@@ -1,7 +1,8 @@
 ---
 layout: solution
 title: Combination Sum
-date: 2014-08-06 12:25:15 +0800
+date: 2014-08-13 17:57:39 +0800
+eaten: true
 ---
 {% assign leetcode_name = {{page.path | remove: '/index.md'}}  %}
 {% assign leetcode_readme = {{leetcode_name | append: '/README.md' | prepend: '_root/' }}  %}
