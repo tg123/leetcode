@@ -69,21 +69,17 @@ public class Solution {
         _end.end = true;
         wmap.put(end, _end);
 
+        // help to connected to end
         dict.add(end);
 
-        Word _start = new Word(start);
-        connect(_start, dict);
 
         final Trace SEP = new Trace(null, null);
         LinkedList<Trace> queue = new LinkedList<Trace>();
-
-        for (Word word : _start.next) {
-            queue.add(new Trace(word, null));
-        }
-
+        
+        queue.add(new Trace(new Word(start), null));
         queue.add(SEP);
 
-        boolean find = false;
+        boolean found = false;
 
         HashSet<Word> vi = new HashSet<Word>();
         HashSet<Word> svi = new HashSet<Word>();
@@ -95,39 +91,40 @@ public class Solution {
             if(step == SEP) {
                 vi.addAll(svi);
                 svi.clear();
-                queue.add(SEP);
-                if (find) break;
-                if (queue.peek() == SEP) break;
-                continue;
-            }
+                
+                if (found) break;
+                if (!queue.isEmpty()) queue.add(SEP);
+                
+            } else {
 
-            Word word = step.obj;
-            connect(word, dict);
-
-            if(word.end){
-
-                LinkedList<String> r = new LinkedList<String>();
-
-
-                Trace t = step;
-
-                while (t != null){
-                    r.addFirst(t.obj.word);
-                    t = t.prev;
-                }
-
-                r.addFirst(start);
-
-                rt.add(r);
-
-                find = true;
-            }else if(!find){
-
-                for (Word p : word.next) {
-
-                    if(!vi.contains(p)) {
-                        queue.add(new Trace(p, step));
-                        svi.add(p);
+                Word word = step.obj;
+                connect(word, dict);
+    
+                
+                if(word.end){
+    
+                    LinkedList<String> r = new LinkedList<String>();
+    
+    
+                    Trace t = step;
+    
+                    while (t != null){
+                        r.addFirst(t.obj.word);
+                        t = t.prev;
+                    }
+    
+                    rt.add(r);
+    
+                    found = true;
+                    
+                }else if(!found){ // prevent deeper level to be visited
+    
+                    for (Word p : word.next) {
+    
+                        if(!vi.contains(p)) {
+                            queue.add(new Trace(p, step));
+                            svi.add(p);
+                        }
                     }
                 }
             }
@@ -135,6 +132,5 @@ public class Solution {
 
 
         return rt;
-
     }
 }
