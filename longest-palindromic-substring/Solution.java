@@ -1,43 +1,40 @@
 public class Solution {
     public String longestPalindrome(String s) {
         
+        char[] S = s.toCharArray();
         
-        // http://leetcode.com/2011/11/longest-palindromic-substring-part-i.html
+        if(S.length == 0) return "";
         
-        final char[] S = s.toCharArray();
-        final int N = S.length;
+        boolean[][] P = new boolean[S.length][S.length];
         
-        if(N == 0) return "";
-        if(N == 1) return s;
-        if(N == 2) return S[0] == S[1] ? s : "";
+        int maxi = 0;
+        int maxlen = 1;
         
-        boolean[][] P = new boolean[N][N];
+        // len 1
+        Arrays.fill(P[1 - 1], true);
         
-        for(int i = 0; i < N - 1; i++){
-            P[i][i] = true;
-            P[i][i + 1] = S[i] == S[i + 1];
-        }
-        
-        P[N - 1][N - 1] = true;
-        
-        for(int j = 2; j < N; j++){
-            for(int i = 0; i < j; i++){
-                P[i][j] |= P[i + 1][j - 1] && S[i] == S[j];
+        // len 2
+        for(int i = 0; i < S.length - 1; i++){
+            if(S[i] == S[i + 2 - 1]){
+                P[2 - 1][i] = true;
+                maxi = i;
+                maxlen = 2;
             }
         }
         
-        int mi = 0;
-        int mj = 0;
-        
-        for(int i = 0; i < N; i++){
-            for(int j = 0; j < N; j++){
-                if(P[i][j] && (j - i > mj - mi)){
-                    mi = i;
-                    mj = j;
+        // len 3 to max
+        for(int len = 3; len <= S.length; len++){
+            
+            for(int i = 0; i < S.length - (len - 1); i++){
+                
+                if(P[len - 1 - 2][i + 1] && S[i] == S[i + len - 1]){
+                    P[len - 1][i] = true;
+                    maxi = i;
+                    maxlen = len;
                 }
             }
-        }        
+        }
         
-        return new String(S, mi, mj - mi + 1);
+        return s.substring(maxi, maxi + maxlen);
     }
 }
