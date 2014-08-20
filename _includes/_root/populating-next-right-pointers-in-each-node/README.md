@@ -1,3 +1,8 @@
+## First glance
+
+It would be an easy problem if [Binary Tree Level Order Traversal](../binary-tree-level-order-traversal) works. 
+Yet, a queue is not allow because of that constant space is required.
+
 ## Recursion
 
 connecting left and right child is easy, just `node.left.next = node.right`
