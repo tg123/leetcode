@@ -1,48 +1,49 @@
 public class Solution {
-
     public int minCut(String s) {
-        final char[] S = s.toCharArray();
-        final int N = S.length;
+        char[] S = s.toCharArray();
         
-        if(N == 0) return 0;
-        if(N == 1) return 0;
-        if(N == 2) return S[0] == S[1] ? 0 : 1;
+        if(S.length == 0) return 0;
         
-        boolean[][] P = new boolean[N][N];
+        boolean[][] P = new boolean[S.length][S.length];
         
-        for(int i = 0; i < N - 1; i++){
-            P[i][i] = true;
-            P[i][i + 1] = S[i] == S[i + 1];
+        // len 1
+        Arrays.fill(P[1 - 1], true);
+        
+        // len 2
+        for(int i = 0; i < S.length - 1; i++){
+            P[2 - 1][i] = S[i] == S[i + 2 - 1];
         }
         
-        P[N - 1][N - 1] = true;
-        
-        for(int j = 2; j < N; j++){
-            for(int i = 0; i < j; i++){
-                P[i][j] |= P[i + 1][j - 1] && S[i] == S[j];
+        // len 3 to max
+        for(int len = 3; len <= S.length; len++){
+            
+            for(int i = 0; i < S.length - (len - 1); i++){
+                P[len - 1][i] = P[len - 1 - 2][i + 1] && S[i] == S[i + len - 1];
             }
         }
         
+        int[] mincut = new int[S.length + 1];
         
-        int mincut[] = new int[N + 1]; // i -> end
-
-        for(int i = N - 2; i >= 0; i--){
-
-            if(P[i][N - 1]) {
-                mincut[i] = 0;
-            } else {
-                mincut[i] = mincut[i + 1] + 1;
-
-                for(int j = i + 1; j < N; j++){
-                    if(P[i][j]){
-                        mincut[i] = Math.min(1 + mincut[j + 1], mincut[i]);
+        mincut[0] = 0;
+        mincut[1] = 0;
+        
+        for(int len = 2; len <= S.length; len++){
+            
+            if(P[len - 1][0]){
+                mincut[len] = 0;
+            }else{
+                
+                mincut[len] = mincut[len - 1] + 1;
+                
+                for(int i = 1; i < len - 1; i++){
+                    
+                    if(P[len - i - 1][i]){
+                        mincut[len] = Math.min(mincut[i] + 1 , mincut[len]);
                     }
                 }
-                //mincut = Math.min(minCut(s.substring(i + 1)) + 1, mincut);
             }
         }
-
-        return mincut[0];
         
+        return mincut[S.length];
     }
 }
