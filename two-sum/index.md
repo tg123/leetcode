@@ -1,7 +1,7 @@
 ---
 layout: solution
 title: Two Sum
-date: 2014-07-31 12:15:46 +0800
+date: 2014-08-27 11:53:26 +0800
 eaten: true
 ---
 {% assign leetcode_name = {{page.path | remove: '/index.md'}}  %}

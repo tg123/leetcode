@@ -1,12 +1,21 @@
 public class Solution {
     public int[] twoSum(int[] numbers, int target) {
-        // Note: The Solution object is instantiated only once and is reused by each test case.
+        
+        HashMap<Integer, Integer> m = new HashMap<Integer, Integer>();
+        
         for(int i = 0; i < numbers.length; i++){
-            for(int j = i + 1 ; j < numbers.length; j++){
-                if (numbers[i] + numbers[j] == target) return new int[]{i + 1, j + 1};
+            m.put(target - numbers[i], i);
+        }
+        
+        for(int i = 0; i < numbers.length; i++){
+            
+            Integer v = m.get(numbers[i]);
+            
+            if(v != null && v != i){
+                return new int[]{i + 1, v + 1};                
             }
         }
         
-        throw new RuntimeException();        
+        throw new RuntimeException();
     }
 }
