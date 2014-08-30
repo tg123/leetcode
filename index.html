@@ -6,20 +6,10 @@ layout: default
   <h1>Solutions <em>Last update on {{site.time}}</em></h1>
 
   <ul class="posts">
-    {% assign pages = site.pages | where: 'layout', 'solution' | where: 'eaten', true | sort: 'date' %}
+    {% assign pages = site.pages | where: 'layout', 'solution' | sort: 'date' %}
     {% for page in pages reversed %}
       <li>
         <a class="post-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <ul class="posts">
-    {% assign pages = site.pages | where: 'layout', 'solution' | where: 'eaten', nil | sort: 'date' %}
-    {% for page in pages reversed %}
-      <li>
-        <a class="post-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
-        <em>[Code only]</em>
       </li>
     {% endfor %}
   </ul>
