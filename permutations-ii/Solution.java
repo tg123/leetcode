@@ -1,4 +1,5 @@
 public class Solution {
+    
     void swap(int x[], int a, int b) {
     	int t = x[a];
     	x[a] = x[b];
@@ -37,7 +38,7 @@ public class Solution {
         return true;
     }    
     
-    ArrayList<Integer> asList(int[] num){
+    List<Integer> asList(int[] num){
         ArrayList<Integer> l = new ArrayList<Integer>(num.length);
         for(int i = 0; i < num.length; i++)
             l.add(num[i]);
@@ -45,11 +46,10 @@ public class Solution {
         return l;
     }
     
-    public ArrayList<ArrayList<Integer>> permuteUnique(int[] num) {
-        // Note: The Solution object is instantiated only once and is reused by each test case.
+    public List<List<Integer>> permuteUnique(int[] num) {
         Arrays.sort(num);
         
-        ArrayList<ArrayList<Integer>> found = new ArrayList<ArrayList<Integer>>();
+        ArrayList<List<Integer>> found = new ArrayList<List<Integer>>();
         found.add(asList(num));
         
         while(nextPermutation(num)){
