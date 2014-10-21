@@ -10,12 +10,12 @@ public class Solution {
         int m = (s + e) / 2;
 
         // s < m < e
-        if ( num[s] <= num[m] && num[m] < num[e - 1]){
+        if ( num[s] < num[m] && num[m] < num[e - 1]){
             return num[s];
         }
 
         // s < m > e
-        if ( num[s] <= num[m] && num[m] >= num[e - 1]){
+        if ( num[s] < num[m] && num[m] > num[e - 1]){
             return findMin(Arrays.copyOfRange(num, m, e));
         }
 
