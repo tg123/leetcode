@@ -6,10 +6,10 @@ layout: default
   <h1>Solutions <em>Last update on {{site.time}}</em></h1>
 
   <ul class="posts">
-    {% assign pages = site.pages | where: 'layout', 'solution' | sort: 'date' %}
+    {% assign pages = site.pages | where: 'layout', 'solution' | sort: 'leetcode_id' %}
     {% for page in pages reversed %}
       <li>
-        <a class="post-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+        {{page.leetcode_id}} <a class="post-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
       </li>
     {% endfor %}
   </ul>

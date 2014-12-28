@@ -2,6 +2,7 @@
 layout: solution
 title: Sudoku Solver
 date: 2014-08-01 00:53:53 +0800
+leetcode_id: 37
 ---
 {% assign leetcode_name = {{page.path | remove: '/index.md'}}  %}
 {% assign leetcode_readme = {{leetcode_name | append: '/README.md' | prepend: '_root/' }}  %}

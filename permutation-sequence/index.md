@@ -2,6 +2,7 @@
 layout: solution
 title: Permutation Sequence
 date: 2014-08-29 20:57:36 +0800
+leetcode_id: 60
 ---
 {% assign leetcode_name = {{page.path | remove: '/index.md'}}  %}
 {% assign leetcode_readme = {{leetcode_name | append: '/README.md' | prepend: '_root/' }}  %}

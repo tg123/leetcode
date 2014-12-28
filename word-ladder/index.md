@@ -2,6 +2,7 @@
 layout: solution
 title: Word Ladder
 date: 2014-08-13 18:48:36 +0800
+leetcode_id: 127
 ---
 {% assign leetcode_name = {{page.path | remove: '/index.md'}}  %}
 {% assign leetcode_readme = {{leetcode_name | append: '/README.md' | prepend: '_root/' }}  %}

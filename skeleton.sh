@@ -18,6 +18,7 @@ cat > $leetcode_name/index.md <<EOL
 layout: solution
 title: FIXME
 date: $now
+leetcode_id: FIXME
 ---
 {% assign leetcode_name = {{page.path | remove: '/index.md'}}  %}
 {% assign leetcode_readme = {{leetcode_name | append: '/README.md' | prepend: '_root/' }}  %}
