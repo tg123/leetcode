@@ -1,7 +1,7 @@
 ---
 layout: solution
 title: Palindrome Partitioning II
-date: 2014-08-22 20:14:10 +0800
+date: 2014-12-29 00:26:24 +0800
 leetcode_id: 132
 ---
 {% assign leetcode_name = {{page.path | remove: '/index.md'}}  %}

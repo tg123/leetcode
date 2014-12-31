@@ -1,7 +1,7 @@
 ---
 layout: solution
 title: Search a 2D Matrix
-date: 2014-08-04 13:33:58 +0800
+date: 2014-12-29 00:26:24 +0800
 leetcode_id: 74
 ---
 {% assign leetcode_name = {{page.path | remove: '/index.md'}}  %}

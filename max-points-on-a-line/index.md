@@ -1,7 +1,7 @@
 ---
 layout: solution
 title: Max Points on a Line
-date: 2014-07-25 12:40:38 +0800
+date: 2014-12-29 00:26:24 +0800
 leetcode_id: 149
 ---
 {% assign leetcode_name = {{page.path | remove: '/index.md'}}  %}

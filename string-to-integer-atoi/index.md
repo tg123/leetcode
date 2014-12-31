@@ -1,7 +1,7 @@
 ---
 layout: solution
 title: String to Integer (atoi)
-date: 2014-07-27 00:43:11 +0800
+date: 2014-12-29 00:26:24 +0800
 leetcode_id: 8
 ---
 {% assign leetcode_name = {{page.path | remove: '/index.md'}}  %}

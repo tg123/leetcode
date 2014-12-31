@@ -1,7 +1,7 @@
 ---
 layout: solution
 title: Divide Two Integers
-date: 2014-07-26 22:51:51 +0800
+date: 2014-12-29 00:26:24 +0800
 leetcode_id: 29
 ---
 {% assign leetcode_name = {{page.path | remove: '/index.md'}}  %}

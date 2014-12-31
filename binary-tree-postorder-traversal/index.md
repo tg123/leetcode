@@ -1,7 +1,7 @@
 ---
 layout: solution
 title: Binary Tree Postorder Traversal
-date: 2014-07-30 01:19:00 +0800
+date: 2014-12-29 00:26:24 +0800
 leetcode_id: 145
 ---
 {% assign leetcode_name = {{page.path | remove: '/index.md'}}  %}

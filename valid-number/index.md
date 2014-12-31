@@ -1,7 +1,7 @@
 ---
 layout: solution
 title: Valid Number
-date: 2014-08-01 11:33:18 +0800
+date: 2014-12-29 00:26:24 +0800
 leetcode_id: 65
 ---
 {% assign leetcode_name = {{page.path | remove: '/index.md'}}  %}

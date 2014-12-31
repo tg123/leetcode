@@ -1,7 +1,7 @@
 ---
 layout: solution
 title: LRU Cache
-date: 2014-07-28 01:06:09 +0800
+date: 2014-12-29 00:26:24 +0800
 leetcode_id: 146
 ---
 {% assign leetcode_name = {{page.path | remove: '/index.md'}}  %}

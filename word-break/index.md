@@ -1,7 +1,7 @@
 ---
 layout: solution
 title: Word Break
-date: 2014-08-20 19:53:59 +0800
+date: 2014-12-29 00:26:24 +0800
 leetcode_id: 139
 ---
 {% assign leetcode_name = {{page.path | remove: '/index.md'}}  %}

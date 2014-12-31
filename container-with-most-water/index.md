@@ -1,7 +1,7 @@
 ---
 layout: solution
 title: Container With Most Water
-date: 2014-08-04 14:16:13 +0800
+date: 2014-12-29 00:26:24 +0800
 leetcode_id: 11
 ---
 {% assign leetcode_name = {{page.path | remove: '/index.md'}}  %}

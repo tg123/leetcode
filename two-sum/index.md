@@ -1,7 +1,7 @@
 ---
 layout: solution
 title: Two Sum
-date: 2014-08-27 11:53:26 +0800
+date: 2014-12-29 00:26:24 +0800
 leetcode_id: 1
 leetcode_id: 1
 ---

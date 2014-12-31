@@ -1,7 +1,7 @@
 ---
 layout: solution
 title: Sudoku Solver
-date: 2014-08-01 00:53:53 +0800
+date: 2014-12-29 00:26:24 +0800
 leetcode_id: 37
 ---
 {% assign leetcode_name = {{page.path | remove: '/index.md'}}  %}

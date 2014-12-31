@@ -1,7 +1,7 @@
 ---
 layout: solution
 title: Best Time to Buy and Sell Stock
-date: 2014-07-30 00:42:07 +0800
+date: 2014-12-29 00:26:24 +0800
 leetcode_id: 121
 ---
 {% assign leetcode_name = {{page.path | remove: '/index.md'}}  %}

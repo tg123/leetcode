@@ -1,7 +1,7 @@
 ---
 layout: solution
 title: Longest Substring with At Most Two Distinct Characters
-date: 2014-12-15 18:13:21 +0800
+date: 2014-12-29 00:26:24 +0800
 leetcode_id: 159
 ---
 {% assign leetcode_name = {{page.path | remove: '/index.md'}}  %}

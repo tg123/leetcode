@@ -1,7 +1,7 @@
 ---
 layout: solution
 title: Largest Rectangle in Histogram
-date: 2014-07-30 17:01:27 +0800
+date: 2014-12-29 00:26:24 +0800
 leetcode_id: 84
 ---
 {% assign leetcode_name = {{page.path | remove: '/index.md'}}  %}

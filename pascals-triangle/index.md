@@ -1,7 +1,7 @@
 ---
 layout: solution
 title: Pascal's Triangle
-date: 2014-07-30 00:12:08 +0800
+date: 2014-12-29 00:26:24 +0800
 leetcode_id: 118
 ---
 {% assign leetcode_name = {{page.path | remove: '/index.md'}}  %}

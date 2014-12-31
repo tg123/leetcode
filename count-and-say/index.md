@@ -1,7 +1,7 @@
 ---
 layout: solution
 title: Count and Say
-date: 2014-07-26 18:50:47 +0800
+date: 2014-12-29 00:26:24 +0800
 leetcode_id: 38
 ---
 {% assign leetcode_name = {{page.path | remove: '/index.md'}}  %}

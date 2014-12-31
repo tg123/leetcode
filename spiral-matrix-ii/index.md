@@ -1,7 +1,7 @@
 ---
 layout: solution
 title: Spiral Matrix II
-date: 2014-08-01 19:10:34 +0800
+date: 2014-12-29 00:26:24 +0800
 leetcode_id: 59
 ---
 {% assign leetcode_name = {{page.path | remove: '/index.md'}}  %}

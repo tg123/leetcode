@@ -1,7 +1,7 @@
 ---
 layout: solution
 title: 3Sum Closest
-date: 2014-08-02 23:07:51 +0800
+date: 2014-12-29 00:26:24 +0800
 leetcode_id: 16
 ---
 {% assign leetcode_name = {{page.path | remove: '/index.md'}}  %}

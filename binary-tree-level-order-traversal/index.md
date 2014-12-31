@@ -1,7 +1,7 @@
 ---
 layout: solution
 title: Binary Tree Level Order Traversal
-date: 2014-08-01 17:34:15 +0800
+date: 2014-12-29 00:26:24 +0800
 leetcode_id: 102
 ---
 {% assign leetcode_name = {{page.path | remove: '/index.md'}}  %}

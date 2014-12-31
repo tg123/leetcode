@@ -1,7 +1,7 @@
 ---
 layout: solution
 title: Candy
-date: 2014-08-01 14:53:22 +0800
+date: 2014-12-29 00:26:24 +0800
 leetcode_id: 135
 ---
 {% assign leetcode_name = {{page.path | remove: '/index.md'}}  %}

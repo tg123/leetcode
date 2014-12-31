@@ -1,7 +1,7 @@
 ---
 layout: solution
 title: Construct Binary Tree from Inorder and Postorder Traversal
-date: 2014-08-12 19:03:53 +0800
+date: 2014-12-29 00:26:24 +0800
 leetcode_id: 106
 ---
 {% assign leetcode_name = {{page.path | remove: '/index.md'}}  %}

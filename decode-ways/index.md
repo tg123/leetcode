@@ -1,7 +1,7 @@
 ---
 layout: solution
 title: Decode Ways
-date: 2014-08-01 11:16:28 +0800
+date: 2014-12-29 00:26:24 +0800
 leetcode_id: 91
 ---
 {% assign leetcode_name = {{page.path | remove: '/index.md'}}  %}

@@ -1,7 +1,7 @@
 ---
 layout: solution
 title: Merge k Sorted Lists
-date: 2014-07-30 19:13:09 +0800
+date: 2014-12-29 00:26:24 +0800
 leetcode_id: 23
 ---
 {% assign leetcode_name = {{page.path | remove: '/index.md'}}  %}

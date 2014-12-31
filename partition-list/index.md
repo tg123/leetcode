@@ -1,7 +1,7 @@
 ---
 layout: solution
 title: Partition List
-date: 2014-07-31 15:09:14 +0800
+date: 2014-12-29 00:26:24 +0800
 leetcode_id: 86
 ---
 {% assign leetcode_name = {{page.path | remove: '/index.md'}}  %}

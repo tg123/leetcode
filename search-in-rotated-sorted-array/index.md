@@ -1,7 +1,7 @@
 ---
 layout: solution
 title: Search in Rotated Sorted Array
-date: 2014-07-29 19:03:11 +0800
+date: 2014-12-29 00:26:24 +0800
 leetcode_id: 33
 ---
 {% assign leetcode_name = {{page.path | remove: '/index.md'}}  %}

@@ -1,7 +1,7 @@
 ---
 layout: solution
 title: Minimum Depth of Binary Tree
-date: 2014-08-01 01:24:15 +0800
+date: 2014-12-29 00:26:24 +0800
 leetcode_id: 111
 ---
 {% assign leetcode_name = {{page.path | remove: '/index.md'}}  %}

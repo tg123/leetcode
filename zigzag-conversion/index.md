@@ -1,7 +1,7 @@
 ---
 layout: solution
 title: ZigZag Conversion
-date: 2014-07-31 14:06:32 +0800
+date: 2014-12-29 00:26:24 +0800
 leetcode_id: 6
 ---
 {% assign leetcode_name = {{page.path | remove: '/index.md'}}  %}

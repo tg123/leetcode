@@ -1,7 +1,7 @@
 ---
 layout: solution
 title: Next Permutation
-date: 2014-08-31 00:42:19 +0800
+date: 2014-12-29 00:26:24 +0800
 leetcode_id: 31
 ---
 {% assign leetcode_name = {{page.path | remove: '/index.md'}}  %}

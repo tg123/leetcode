@@ -1,7 +1,7 @@
 ---
 layout: solution
 title: Trapping Rain Water
-date: 2014-07-29 01:15:56 +0800
+date: 2014-12-29 00:26:24 +0800
 leetcode_id: 42
 ---
 {% assign leetcode_name = {{page.path | remove: '/index.md'}}  %}

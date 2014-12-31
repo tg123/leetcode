@@ -1,7 +1,7 @@
 ---
 layout: solution
 title: Remove Element
-date: 2014-07-31 15:57:51 +0800
+date: 2014-12-29 00:26:24 +0800
 leetcode_id: 27
 ---
 {% assign leetcode_name = {{page.path | remove: '/index.md'}}  %}

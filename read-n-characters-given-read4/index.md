@@ -1,7 +1,7 @@
 ---
 layout: solution
 title: Read N Characters Given Read4 
-date: 2014-12-15 17:18:30 +0800
+date: 2014-12-29 00:26:24 +0800
 leetcode_id: 157
 ---
 {% assign leetcode_name = {{page.path | remove: '/index.md'}}  %}

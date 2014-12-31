@@ -1,7 +1,7 @@
 ---
 layout: solution
 title: Median of Two Sorted Arrays
-date: 2014-08-11 19:38:54 +0800
+date: 2014-12-29 00:26:24 +0800
 leetcode_id: 4
 ---
 {% assign leetcode_name = {{page.path | remove: '/index.md'}}  %}

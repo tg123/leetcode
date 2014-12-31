@@ -1,7 +1,7 @@
 ---
 layout: solution
 title: Symmetric Tree
-date: 2014-08-07 00:26:36 +0800
+date: 2014-12-29 00:26:24 +0800
 leetcode_id: 101
 ---
 {% assign leetcode_name = {{page.path | remove: '/index.md'}}  %}

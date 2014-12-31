@@ -1,7 +1,7 @@
 ---
 layout: solution
 title: Gas Station
-date: 2014-08-17 23:57:14 +0800
+date: 2014-12-29 00:26:24 +0800
 leetcode_id: 134
 ---
 {% assign leetcode_name = {{page.path | remove: '/index.md'}}  %}

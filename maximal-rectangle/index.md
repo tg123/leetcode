@@ -1,7 +1,7 @@
 ---
 layout: solution
 title: Maximal Rectangle
-date: 2014-08-03 09:01:30 +0800
+date: 2014-12-29 00:26:24 +0800
 leetcode_id: 85
 ---
 {% assign leetcode_name = {{page.path | remove: '/index.md'}}  %}

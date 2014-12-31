@@ -1,7 +1,7 @@
 ---
 layout: solution
 title: Letter Combinations of a Phone Number
-date: 2014-07-26 23:35:47 +0800
+date: 2014-12-29 00:26:24 +0800
 leetcode_id: 17
 ---
 {% assign leetcode_name = {{page.path | remove: '/index.md'}}  %}

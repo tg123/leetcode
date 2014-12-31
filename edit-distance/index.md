@@ -1,7 +1,7 @@
 ---
 layout: solution
 title: Edit Distance
-date: 2014-08-27 01:17:53 +0800
+date: 2014-12-29 00:26:24 +0800
 leetcode_id: 72
 ---
 {% assign leetcode_name = {{page.path | remove: '/index.md'}}  %}

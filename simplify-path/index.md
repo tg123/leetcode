@@ -1,7 +1,7 @@
 ---
 layout: solution
 title: Simplify Path
-date: 2014-08-02 23:57:16 +0800
+date: 2014-12-29 00:26:24 +0800
 leetcode_id: 71
 ---
 {% assign leetcode_name = {{page.path | remove: '/index.md'}}  %}

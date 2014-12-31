@@ -1,7 +1,7 @@
 ---
 layout: solution
 title: Minimum Path Sum
-date: 2014-08-06 00:58:46 +0800
+date: 2014-12-29 00:26:24 +0800
 leetcode_id: 64
 ---
 {% assign leetcode_name = {{page.path | remove: '/index.md'}}  %}
