@@ -1,7 +1,7 @@
 ---
 layout: solution
 title: Factorial Trailing Zeroes
-date: 2014-12-30 18:01:41 +0800
+date: 2015-01-03 03:36:44 +0800
 leetcode_id: 172
 ---
 {% assign leetcode_name = {{page.path | remove: '/index.md'}}  %}
