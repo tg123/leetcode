@@ -7,6 +7,6 @@ public class Solution {
 
     if("0".equals(ns[0])) return "0";
 
-    return Arrays.stream(ns).reduce((x, y) -> x + y).get();
+    return Arrays.stream(ns).collect(Collectors.joining());
   }
 }
