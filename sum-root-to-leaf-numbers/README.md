@@ -10,4 +10,4 @@ parent_val(node) = 0                                                  [ node is 
 ```
 
 
-I have written some versions using DFS and BSF, but they are not as clear as above.
+I have written some versions using DFS and BFS, but they are not as clear as above.
