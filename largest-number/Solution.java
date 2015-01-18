@@ -1,12 +1,12 @@
 public class Solution {
-  public String largestNumber(int[] num) {
+    public String largestNumber(int[] num) {
+        String[] ns = Arrays.stream(num)
+                .mapToObj(Integer::toString)
+                .sorted((x, y) -> (y + x).compareTo(x + y))
+                .toArray(String[]::new);
 
-    String[] ns = Arrays.stream(num).mapToObj(x -> "" + x).toArray(String[]::new);
+        if ("0".equals(ns[0])) return "0";
 
-    Arrays.sort(ns, (String x, String y) -> (y + x).compareTo(x + y));
-
-    if("0".equals(ns[0])) return "0";
-
-    return Arrays.stream(ns).collect(Collectors.joining());
-  }
+        return String.join("", ns);
+    }
 }
