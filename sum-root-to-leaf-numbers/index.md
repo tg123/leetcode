@@ -1,7 +1,7 @@
 ---
 layout: solution
 title: Sum Root to Leaf Numbers
-date: 2014-12-29 00:26:24 +0800
+date: 2015-01-16 16:07:02 -0500
 leetcode_id: 129
 ---
 {% assign leetcode_name = {{page.path | remove: '/index.md'}}  %}
