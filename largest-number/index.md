@@ -1,7 +1,7 @@
 ---
 layout: solution
 title: Largest Number
-date: 2015-01-14 11:09:14 +0800
+date: 2015-01-19 00:17:27 +0800
 leetcode_id: 179
 ---
 {% assign leetcode_name = {{page.path | remove: '/index.md'}}  %}
