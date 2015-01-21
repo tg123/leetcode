@@ -1,36 +1,36 @@
 public class Solution {
+    
+    void swap(int[] A, int i, int j){
+        int t = A[i];
+        A[i] = A[j];
+        A[j] = t;
+    }
+     
     public void sortColors(int[] A) {
-        // Note: The Solution object is instantiated only once and is reused by each test case.
         
-        int red  = 0;
+        int red = 0;
         int blue = A.length - 1;
         
-        int p = 0;
+        int white = 0;
         
-        int t = 0;
-        
-        while(p <= blue){
+        while( white <= blue ){
             
-            if(A[p] == 0){ //red
-                t = A[p];
-                A[p] = A[red];
-                A[red] = t;
-                
+            if(A[white] == 0){ // red 
+                swap(A, white, red);
+            
                 red++;
-                p++;
+                white++;
+            }else if(A[white] == 1){ // white
                 
-            }else if(A[p] == 2){ // blue
-                t = A[p];
-                A[p] = A[blue];
-                A[blue] = t;
+                white++;
+                
+            }else if (A[white] == 2) { //blue
+                
+                swap(A, white, blue);
                 
                 blue--;
-            }else{ // white
-            
-                p++;
-                
             }
-            
         }
+        
     }
 }
