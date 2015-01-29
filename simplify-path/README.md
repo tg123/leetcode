@@ -46,3 +46,5 @@ foreach dirname in reverse order
  
 ```
 
+## See a [Google version libguava](https://github.com/google/guava/blob/v18.0/guava/src/com/google/common/io/Files.java#L718)
+
