@@ -1,7 +1,7 @@
 ---
 layout: solution
 title: Sort Colors
-date: 2014-12-29 00:26:24 +0800
+date: 2015-01-22 01:52:46 +0800
 leetcode_id: 75
 ---
 {% assign leetcode_name = {{page.path | remove: '/index.md'}}  %}
