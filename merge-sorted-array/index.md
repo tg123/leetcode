@@ -1,7 +1,7 @@
 ---
 layout: solution
 title: Merge Sorted Array
-date: 2014-12-29 00:26:24 +0800
+date: 2015-02-13 00:34:52 +0800
 leetcode_id: 88
 ---
 {% assign leetcode_name = {{page.path | remove: '/index.md'}}  %}
