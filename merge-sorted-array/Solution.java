@@ -3,7 +3,7 @@ public class Solution {
         
         int pa = 0;
         int pb = 0;
-        int up = 0;
+        // int up = 0;
         
         while(pa < m + pb && pb < n){
             
