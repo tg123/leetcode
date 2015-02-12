@@ -1,32 +1,32 @@
 public class Solution {
+    
+    int safe(int X[], int i){
+        if(i < 0) return Integer.MIN_VALUE;
+        
+        return X[i]; 
+    }
+    
     public void merge(int A[], int m, int B[], int n) {
         
-        int pa = 0;
-        int pb = 0;
-        // int up = 0;
+        int t = A.length - 1;
         
-        while(pa < m + pb && pb < n){
+        int pa = m - 1;
+        int pb = n - 1;
+        
+        while(t >= 0){
             
-            int a = A[pa];
-            int b = B[pb];
+            int a = safe(A, pa);
+            int b = safe(B, pb);
             
-            if (a < b){
-                pa++;
+            if(a > b){
+                A[t] = a;
+                pa--;
             }else{
-                // shift up
-                for(int i = pb + m; i > pa ; i--){
-                    A[i] = A[i - 1];
-                }
-                
-                A[pa] = b;
-                pa++;
-                pb++;
+                A[t] = b;
+                pb--;
             }
             
-        }
-        
-        for( ; pb < n; pb++){
-            A[pb + m] = B[pb];
+            t--;
         }
         
     }
