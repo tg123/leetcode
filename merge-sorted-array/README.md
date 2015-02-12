@@ -15,9 +15,14 @@ Merge(left_sorted_part, right_sorted_part)
 
 ## Merging
 
- 1. taking one (`l`) from `left_sorted_part`
- 1. taking one (`r`) from `right_sorted_part`
- 1. find the smaller(`s`) one in `l` and `r` 
- 1. put `s` into `result array`
- 1. put bigger one back to `left_sorted_part` or `right_sorted_part`
- 1. loop to step 1 until one is empty
+ 1. set `t` the end of `result array`
+ 1. taking one (`l`) from the end of `left_sorted_part`
+ 1. taking one (`r`) from the end of `right_sorted_part`
+ 1. find the larger(`g`) one in `l` and `r` 
+ 1. put `g` at position `t` of `result array`
+ 1. loop until `t` reach the bottom of `result array`
+
+When `result array` is an empty array,
+it is passable to copy from the beginning of `left_sorted_part` and `right_sorted_part`.
+
+In this problem, however, we have to copy from end to beginning due to that `left_sorted_part` and `result array` are sharing the same array.
