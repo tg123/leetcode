@@ -3,16 +3,16 @@ public class Solution {
         
         Arrays.sort(num);
         
-        ArrayList<List<Integer>> found = new ArrayList<List<Integer>>();
+        List<List<Integer>> found = new ArrayList<>();
         
         int pneg = 0 , ppos = num.length - 1;
         
-        
         while(ppos > 0 && num[ppos] >= 0){
-            while(pneg < ppos && num[pneg] <= 0 && num[ppos] >= 0){
-                int sum = num[pneg];
-                sum += num[ppos];
+            
+            while(pneg < ppos && num[pneg] <= 0){
                 
+                int sum = num[pneg] + num[ppos];
+
                 for(int i  = pneg + 1; i < ppos; i++){
                     if(num[i] + sum == 0){
                         found.add(Arrays.asList(new Integer[]{num[pneg], num[i] ,num[ppos]}));
@@ -31,8 +31,6 @@ public class Solution {
             while(ppos > 0 && num[ppos] == old) ppos--;
         }
         
-        
         return found;
-        
     }
 }
