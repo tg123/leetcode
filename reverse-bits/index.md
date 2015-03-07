@@ -1,7 +1,7 @@
 ---
 layout: solution
 title: Reverse Bits
-date: 2015-03-07 19:33:34+08:00
+date: 2015-03-07 19:36:21 +0800
 leetcode_id: 190
 ---
 {% assign leetcode_name = {{page.path | remove: '/index.md'}}  %}

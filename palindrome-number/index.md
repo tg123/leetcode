@@ -1,7 +1,7 @@
 ---
 layout: solution
 title: Palindrome Number
-date: 2014-12-29 00:26:24 +0800
+date: 2015-02-16 17:43:10 +0800
 leetcode_id: 9
 ---
 {% assign leetcode_name = {{page.path | remove: '/index.md'}}  %}

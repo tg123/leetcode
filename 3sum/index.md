@@ -1,7 +1,7 @@
 ---
 layout: solution
 title: 3Sum
-date: 2014-12-29 00:26:24 +0800
+date: 2015-02-16 11:19:43 +0800
 leetcode_id: 15
 ---
 {% assign leetcode_name = {{page.path | remove: '/index.md'}}  %}
