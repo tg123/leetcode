@@ -1,6 +1,6 @@
 public class Solution {
     public int minimumTotal(List<List<Integer>> triangle) {
-        
+
         final int size = triangle.size();
         if(size == 0) return 0;
         if(size == 1) return triangle.get(0).get(0);
@@ -8,7 +8,9 @@ public class Solution {
         int[] s = new int[size];
         
         int i = 0;
-        for(int v : triangle.get(size - 1)) s[i++] = v;
+        for(int v : triangle.get(size - 1)){
+             s[i++] = v;
+        }
         
         for(i = size - 2; i >=0 ; i--){
             List<Integer> step = triangle.get(i);
@@ -19,7 +21,6 @@ public class Solution {
                 s[j] = Math.min(step.get(j) + s[j], step.get(j) + s[j + 1]);
             }
             
-            s[step.size()] = Integer.MAX_VALUE;
         }
 
         return s[0];
