@@ -8,9 +8,6 @@
  * }
  */
 public class Solution {
-    
-    static final TreeNode SEP = new TreeNode(0);
-    
     public List<Integer> rightSideView(TreeNode root) {
         
         if(root == null) return new ArrayList<>();
