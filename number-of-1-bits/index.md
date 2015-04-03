@@ -1,7 +1,7 @@
 ---
 layout: solution
 title: Number of 1 Bits
-date: 2015-03-10 12:29:58+08:00
+date: 2015-03-10 12:33:10 +0800
 leetcode_id: 191
 ---
 {% assign leetcode_name = {{page.path | remove: '/index.md'}}  %}

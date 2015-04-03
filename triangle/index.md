@@ -1,7 +1,7 @@
 ---
 layout: solution
 title: Triangle
-date: 2014-12-29 00:26:24 +0800
+date: 2015-03-20 12:51:52 +0800
 leetcode_id: 120
 ---
 {% assign leetcode_name = {{page.path | remove: '/index.md'}}  %}
