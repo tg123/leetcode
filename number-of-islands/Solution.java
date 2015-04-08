@@ -16,7 +16,7 @@ public class Solution {
 
         visited[x][y] = true;
 
-        for(int[] xy: new int[][]{{x - 1, y}, {x + 1, y}, {x, y - 1}, {x, y + 1}}){
+        for(int[] xy: new int[][]{ {x - 1, y}, {x + 1, y}, {x, y - 1}, {x, y + 1} }){
 
             int _x = xy[0];
             int _y = xy[1];
