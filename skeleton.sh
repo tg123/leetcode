@@ -20,9 +20,7 @@ title: FIXME
 date: $now
 leetcode_id: FIXME
 ---
-{% assign leetcode_name = {{page.path | remove: '/index.md'}}  %}
-{% assign leetcode_readme = {{leetcode_name | append: '/README.md' | prepend: '_root/' }}  %}
-{% include {{leetcode_readme}} %}
+{% include_relative README.md %}
 EOL
 
 
