@@ -8,7 +8,7 @@ reorder can be achieved via
 
 ## Some O(n) method to deal with a linked list
 
-### Reverse a linked list
+### [Reverse a linked list](../reverse-linked-list)
 
   1. walk through the linked list
   1. set `node.next` to `prev`
