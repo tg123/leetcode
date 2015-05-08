@@ -3,55 +3,53 @@
  * public class ListNode {
  *     int val;
  *     ListNode next;
- *     ListNode(int x) {
- *         val = x;
- *         next = null;
- *     }
+ *     ListNode(int x) { val = x; }
  * }
  */
 public class Solution {
+    
+    ListNode reverse(ListNode head) {
+        
+        ListNode prev = null;
+        
+        while(head != null){
+            ListNode t = head.next;
+            
+            head.next = prev;
+            prev = head;
+            
+            head = t;
+        }
+        
+        return prev;
+    }
+    
     public ListNode reverseKGroup(ListNode head, int k) {
-        // IMPORTANT: Please reset any member data you declared, as
-        // the same Solution instance will be reused for each test case.
         
         if(k <= 1) return head;
-        
         if(head == null) return null;
         if(head.next == null) return head;
         
         ListNode tail = head;
-        ListNode prev = null;
         
-        for(int i = 0; i < k ; i++){
-            if(head == null){
-                
-                // rollback
-                head = prev;
-                prev = null;
-                
-                while(head != null){
-                    ListNode t = head.next;
-                    
-                    head.next = prev;
-                    prev = head;
-                    
-                    head = t;
-                }
-                
-                return prev;
-            }
-            
-            ListNode t = head.next;
-             
-            head.next = prev;
-            prev = head;
-             
-            head = t;
+        for(int i = 1; i < k && tail != null; i++){
+            tail = tail.next;
         }
         
-        tail.next = reverseKGroup(head, k);
+        if (tail == null) {
+            // less than k nodes
+            return head;
+        }
         
-        return prev;
         
+        ListNode next = tail.next;
+        tail.next = null; // cut
+        
+        tail = head; // head will be new tail
+        head = reverse(head);
+        
+        tail.next = reverseKGroup(next, k);
+        
+        return head;
     }
 }
