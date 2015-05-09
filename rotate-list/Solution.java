@@ -3,39 +3,36 @@
  * public class ListNode {
  *     int val;
  *     ListNode next;
- *     ListNode(int x) {
- *         val = x;
- *         next = null;
- *     }
+ *     ListNode(int x) { val = x; }
  * }
  */
 public class Solution {
-    public ListNode rotateRight(ListNode head, int n) {
-        // Note: The Solution object is instantiated only once and is reused by each test case.
+    public ListNode rotateRight(ListNode head, int k) {
         
         if(head == null) return null;
         
-        ListNode _head = head;
-        
-        ListNode node = head;
         int len = 1;
-        while(node.next != null){
+        
+        ListNode tail = head;
+        
+        while(tail.next != null){
             len++;
-            node = node.next;
+            tail = tail.next;
         }
         
-        n %= len;
-
-        ListNode tail = node;
+        tail.next = head; // cycle
         
-        node = head;
-        for(int i = 0; i < len - n - 1; i++) node = node.next;
+        k %= len;
         
-        tail.next = head;
-        ListNode rt = node.next;
-        node.next = null;
+        for(int i = 1; i < len - k; i++){
+            head = head.next;
+        }
         
-        return rt;
+        try {
+            return head.next;
+        } finally {
+            head.next = null; // cut
+        }
         
     }
 }
