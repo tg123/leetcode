@@ -54,6 +54,8 @@ that means we can make a filter to remove all `set` must not take `0` as its fir
 and `1` as it second and so on...
 
 so we build a methd
+
+
 ```
 check_has_char(pos, letter, two_part_set)
     set = pos -> left_set or right_set depends on the two_part_set pivot
