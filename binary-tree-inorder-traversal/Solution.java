@@ -22,10 +22,10 @@ public class Solution {
         }
     }
     
-    public ArrayList<Integer> inorderTraversal(TreeNode root) {
-        ArrayList<Integer> rt = new ArrayList<Integer>();
+    public List<Integer> inorderTraversal(TreeNode root) {
+        ArrayList<Integer> rt = new ArrayList<>();
 
-        Deque<StackState> stack = new LinkedList<StackState>();
+        Deque<StackState> stack = new LinkedList<>();
         
         if(root != null)
             stack.push(new StackState(root));
