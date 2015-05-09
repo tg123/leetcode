@@ -9,7 +9,7 @@ public class Solution {
         if(pstack == 4){
             
             if(p >= s.length()){
-                String ip = "" + stack[0] + "." + stack[1] + "." + stack[2] + "." + stack[3];
+                String ip = String.join(".", stack);
                 
                 collect.add(ip);
             }
