@@ -1,7 +1,7 @@
 ---
 layout: solution
 title: Reverse Nodes in k-Group
-date: 2014-12-29 00:26:24 +0800
+date: 2015-05-09 02:43:34 +0800
 leetcode_id: 25
 ---
 {% include_relative README.md %}
