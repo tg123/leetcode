@@ -1,18 +1,5 @@
 public class Solution {
     
-    String join(List<String> list){
-        if(list.isEmpty()) return "";
-
-        StringBuilder s = new StringBuilder(list.get(0));
-
-        for(int i = 1; i < list.size(); i++){
-            s.append(' ');
-            s.append(list.get(i));
-        }
-
-        return s.toString();
-    }
-    
     ArrayList<Integer>[] P;
     char[] S;
     ArrayList<String> rt;
@@ -21,7 +8,7 @@ public class Solution {
         
         if(P[offset].isEmpty()){
             
-            rt.add(join(parents));
+            rt.add(String.join(" ", parents));
             return;
         }
         
