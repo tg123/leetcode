@@ -8,9 +8,9 @@
  * }
  */
 public class Solution {
-
-    LinkedList<TreeNode> queue = new LinkedList<TreeNode>();
-
+    
+    LinkedList<TreeNode> queue = new LinkedList<>();
+    
     void inOrder(TreeNode root){
 
         if(root == null) return;
@@ -24,25 +24,26 @@ public class Solution {
         }
 
 
+        // bad side effect
         root.left  = null;
         root.right = null;
     }
-
-    public TreeNode UpsideDownBinaryTree(TreeNode root) {
-
+    
+    public TreeNode upsideDownBinaryTree(TreeNode root) {
+        
         inOrder(root);
-
+        
         TreeNode newRoot = queue.poll();
-
+        
         root = newRoot;
-
+        
         while(!queue.isEmpty()){
             root.right = queue.poll();
             root.left  = queue.poll();
 
             root = root.right;
         }
-
+        
         return newRoot;
     }
 }
