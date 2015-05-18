@@ -2,7 +2,7 @@
 layout: default
 ---
 {% assign leetcode_name = {{page.path | remove: '/index.md'}}  %}
-{% assign leetcode_url = {{leetcode_name | prepend: 'https://oj.leetcode.com/problems/'}}  %}
+{% assign leetcode_url = {{leetcode_name | prepend: 'https://leetcode.com/problems/'}}  %}
 {% assign github_url = {{leetcode_name | prepend: 'https://github.com/tg123/leetcode/blob/gh-pages/' }}  %}
 {% assign github_source_url = {{leetcode_name | prepend: 'https://github.com/tg123/leetcode/blob/gh-pages/' | append: '/Solution.java' }}  %}
 
