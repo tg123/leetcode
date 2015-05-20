@@ -1,7 +1,7 @@
 ## Rob or not
 
 assume that there are 9 houses along the street
-and you have a `rob` func can tell you the how much money you can get from first 8 hourses.
+and you have a `rob` func can tell you the how much money you can get from first 8 houses.
 
 
 what about the 9th house
