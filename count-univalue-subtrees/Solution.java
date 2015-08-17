@@ -7,8 +7,6 @@
  *     TreeNode(int x) { val = x; }
  * }
  */
-import java.util.Objects; // remove after leetcode support import this by default
-
 public class Solution {
 
     void patch(Integer[] v, TreeNode parent, TreeNode me){
