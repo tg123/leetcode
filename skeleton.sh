@@ -7,6 +7,11 @@ if [ -z "$leetcode_name" ]; then
     exit;
 fi
 
+info=`curl -s https://leetcode.com/problemset/algorithms/  | grep missing-number -B 2`
+IFS=
+leetcode_id=`(sed 's/<td>\\(.*\\)<\\/td>/\\1/' | sed 's/^ *//') < <(echo $info | head -n 1)`
+title=`(sed 's/<a.*>\\(.*\\)<\\/a>/\\1/' | sed 's/^ *//') < <(echo $info | tail -n 1)`
+
 now=`date --rfc-3339=seconds`
 
 mkdir -p $leetcode_name
@@ -16,9 +21,9 @@ mkdir -p $leetcode_name
 cat > $leetcode_name/index.md <<EOL
 ---
 layout: solution
-title: FIXME
+title: $title
 date: $now
-leetcode_id: FIXME
+leetcode_id: $leetcode_id
 ---
 {% include_relative README.md %}
 EOL
